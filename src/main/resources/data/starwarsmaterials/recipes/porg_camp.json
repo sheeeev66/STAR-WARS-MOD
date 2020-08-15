@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:campfire_cooking",
+    "ingredient": {
+        "item": "starwarsmaterials:raw_porg"
+    },
+    "result": "starwarsmaterials:cooked_porg",
+    "experience": 0.35,
+    "cookingtime": 200,
+    "group": "porg"
+}

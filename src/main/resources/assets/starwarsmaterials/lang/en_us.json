@@ -1,0 +1,44 @@
+{
+    "item.starwarsmaterials.beskar_ingot" : "Beskar Ingot",
+    "item.starwarsmaterials.plastoid" : "Plastoid",
+    "item.starwarsmaterials.kyber_crystal" : "Kyber Crystal",
+
+    "block.starwarsmaterials.beskar_ore" : "Beskar Ore",
+    "block.starwarsmaterials.kyber_crystal_block" : "Kyber Crystal Block (temp)",
+
+    "item.starwarsmaterials.porg_spawn_egg" : "Porg Spawn Egg",
+
+    "item.starwarsmaterials.raw_porg" : "Raw Porg",
+    "item.starwarsmaterials.cooked_porg" : "Raw Porg",
+
+    "item.starwarsmaterials.mandalorian_helmet" : "Mandalorian Helmet",
+    "item.starwarsmaterials.mandalorian_chestplate" : "Mandalorian Chestplate",
+    "item.starwarsmaterials.mandalorian_leggings" : "Mandalorian Leggings",
+    "item.starwarsmaterials.mandalorian_boots" : "Mandalorian Boots",
+
+    "item.starwarsmaterials.lightsaber_hilt" : "Lightsaber Hilt",
+    "item.starwarsmaterials.lightsaber" : "Lightsaber",
+
+
+
+
+    "itemGroup.starwarsmaterials.general" : "Armor",
+    "itemGroup.starwarsmaterials.materials" : "Materials",
+    "itemGroup.starwarsmaterials.animals" : "Animals",
+
+    "biome.starwarsmaterials.tatooine": "Tatooine",
+
+    
+    "entity.starwarsmaterials.porg": "Porg",
+
+
+
+    "Subtitles.starwarsmaterials.porg_hurt": "Porg Hurts",
+    "Subtitles.starwarsmaterials.porg_ambient": "Porg talks",
+
+    "Subtitles.starwarsmaterials.lightsaber_on": "Lightsaber On",
+    "Subtitles.starwarsmaterials.lightsaber_off": "Lightsaber Off",
+    "Subtitles.starwarsmaterials.lightsaber_humming": "Lightsaber Humming",
+    "Subtitles.starwarsmaterials.lightsaber_move": "Lightsaber Move",
+    "Subtitles.starwarsmaterials.lightsaber_hit": "Lightsaber Hit"
+}

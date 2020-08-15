@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "starwarsmaterials:block/beskar_ore"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+    "porg_hurt": {
+        "subtitle": "Subtitles.starwarsmaterials.porg_hurt",
+        "sounds": [
+            "starwarsmaterials:porg_hurt"
+        ]
+    },
+
+    "porg_ambient": {
+        "subtitle": "Subtitles.starwarsmaterials.porg_ambient",
+        "sounds": [
+            "starwarsmaterials:porg_ambient"
+        ]
+    },
+
+
+
+
+    "lightsaber_on": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_on",
+        "sounds": [
+            "starwarsmaterials:lightsaber_on"
+        ]
+    },
+
+    "lightsaber_off": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_off",
+        "sounds": [
+            "starwarsmaterials:lightsaber_off"
+        ]
+    },
+
+    "lightsaber_humming": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_humming",
+        "sounds": [
+            "starwarsmaterials:lightsaber_humming"
+        ]
+    },
+
+    "lightsaber_move": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move",
+        "sounds": [
+            "starwarsmaterials:lightsaber_move"
+        ]
+    },
+
+    "lightsaber_hit": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit",
+        "sounds": [
+            "starwarsmaterials:lightsaber_hit"
+        ]
+    }
+  }

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "starwarsmaterials",
+  "version": "${version}",
+
+  "name": "Star Wars Materials and tools",
+  "description": "The ultimate star wars mod! adding everything we can think of from star wars to minecraft while keeping the \"minecraft\" intact and every thing star wars cannon!",
+  "authors": [
+    "Sheeeev66 - Project leader, Main Developer, Main Textureror, Main Modeler",
+    "Nuclear - Developer",
+    "OverlordsIII - Developer"
+    
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/starwarsmaterials/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.star.wars.materials.StarWarsMaterials"
+    ],
+    "client": [
+      "net.star.wars.materials.StarWarsMaterialsClient"
+  ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
