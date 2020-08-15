@@ -40,31 +40,18 @@ public class LightsaberItem extends Item {
         ItemStack stack = playerEntity.getMainHandStack();
         CompoundTag tag = stack.getOrCreateTag();
         lightsaberOn = tag.getBoolean("on");
-
-        playerEntity.playSound(
-            lightsaberOn ? StarWarsMaterials.LIGHTSABER_ON : StarWarsMaterials.LIGHTSABER_OFF,
-            1.0f, 1.0f
-        );
-        
         lightsaberOn =  !lightsaberOn;
-        
         tag.putBoolean("on", lightsaberOn); 
 
         
 
-        if (lightsaberOn = true) {
-            if (hand == Hand.MAIN_HAND) {
-                if (!world.isClient){
-                    playerEntity.playSound(StarWarsMaterials.LIGHTSABER_HUMMING, 3.0f, 1.0f);
+        if (player.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_ITEM) {
+                player.inventory.removeStack(player.inventory.getSlotWithStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM)));
+                player.inventory.insertStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_HILT));
+                if(world.isClient) {
+                    player.playSound(StarWarsMaterials.LIGHTSABER_OFF, 5.0f, 1.0f);
                 }
-                
-                if (world.isClient()) {
-                    MinecraftClient.getInstance().getSoundManager().play(new LightSaberHum(playerEntity, SoundCategory.AMBIENT));
-                    MinecraftClient.getInstance().getMusicTracker().stop();
-                }
-
             }
-        }
         
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
     }
