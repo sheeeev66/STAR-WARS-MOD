@@ -12,6 +12,8 @@ import net.star.wars.materials.StarWarsMaterials;
 public class LightSaberHum extends MovingSoundInstance {
     private final PlayerEntity player;
 	// hello this is acoo sad
+    //i am a flat earther of course
+    //but u know that
     public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
         super(StarWarsMaterials.LIGHTSABER_HUMMING, soundCategory);
         this.player = playerIn;

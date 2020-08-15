@@ -35,9 +35,9 @@ public class LightsaberItem extends Item {
 
     @Environment(EnvType.CLIENT)
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         // nbt
-        ItemStack stack = playerEntity.getMainHandStack();
+        ItemStack stack = player.getMainHandStack();
         CompoundTag tag = stack.getOrCreateTag();
         lightsaberOn = tag.getBoolean("on");
         lightsaberOn =  !lightsaberOn;
@@ -53,6 +53,6 @@ public class LightsaberItem extends Item {
                 }
             }
         
-        return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
+        return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
 }
