@@ -17,6 +17,7 @@ public class LightSaberHum extends MovingSoundInstance {
     //of courser
     //ased
     //a
+    //
     public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
         super(StarWarsMaterials.LIGHTSABER_HUMMING, soundCategory);
         this.player = playerIn;
