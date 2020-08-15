@@ -4,20 +4,17 @@ import java.util.List;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.star.wars.materials.StarWarsMaterials;
-import net.star.wars.materials.sounds.LightSaberHum;
 
 public class LightsaberItem extends Item {
 
@@ -45,11 +42,11 @@ public class LightsaberItem extends Item {
 
         
 
-        if (player.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_ITEM) {
-                player.inventory.removeStack(player.inventory.getSlotWithStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM)));
-                player.inventory.insertStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_HILT));
+        if (playerEntity.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_ITEM) {
+            playerEntity.inventory.removeStack(playerEntity.inventory.getSlotWithStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM)));
+            playerEntity.inventory.insertStack(playerEntity.inventory.getSlotWithStack(playerEntity.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_HILT));
                 if(world.isClient) {
-                    player.playSound(StarWarsMaterials.LIGHTSABER_OFF, 5.0f, 1.0f);
+                    playerEntity.playSound(StarWarsMaterials.LIGHTSABER_OFF, 5.0f, 1.0f);
                 }
             }
         
