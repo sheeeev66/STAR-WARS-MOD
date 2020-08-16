@@ -193,7 +193,7 @@ public class StarWarsMaterials implements ModInitializer
 
         //blocks 
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "beskar_ore"), BESKAR_ORE);
-        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ice_crystal"), ICE_CRYSTALS);
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ice_crystals"), ICE_CRYSTALS);
 
         //block items
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beskar_ore"), new BlockItem(BESKAR_ORE, new Item.Settings()));
