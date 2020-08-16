@@ -1,7 +1,7 @@
 {
   "variants": {
     "hanging=false": {
-      "model": "minecraft:block/lantern"
+      "model": "starwarsmaterials:block/ice_crystal_1"
     },
     "hanging=true": {
       "model": "minecraft:block/lantern_hanging"

@@ -37,8 +37,8 @@ public class IceCrystals extends Block {
 
 	public IceCrystals() {
         super(FabricBlockSettings.of(Material.ICE).breakInstantly());
-        this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(HANGING, false)).with(field_26441, false));
-        this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(CRYSTALS, 1)));
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(HANGING, false)).with(field_26441, false));
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(CRYSTALS, 1)));
     }
 
     public static final BooleanProperty HANGING;
@@ -68,13 +68,13 @@ public class IceCrystals extends Block {
                  return (BlockState)blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
               }
            }
-        }
+        } 
 
         BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
 
         if (blockState.isOf(this)) {
             return (BlockState)blockState.with(CRYSTALS, Math.min(4, (Integer)blockState.get(CRYSTALS) + 1));
-        }
+        } 
   
         return null;
     }
@@ -91,14 +91,14 @@ public class IceCrystals extends Block {
         case 2:
         return (Boolean)state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
         case 3:
-        return (Boolean)state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
+        return (Boolean)state.get(HANGING) ? THREE_HANGING_SHAPE : THREE_STANDING_SHAPE;
         case 4:
         return (Boolean)state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
         }
      }
   
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(HANGING, field_26441);
+        builder.add(HANGING, field_26441, CRYSTALS);
     }
   
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
@@ -183,6 +183,7 @@ public class IceCrystals extends Block {
                 Block.createCuboidShape(4.0D ,0.0D ,12.0D , 5.0D ,8.0D ,13.0D),
                 Block.createCuboidShape(3.0D ,0.0D ,11.0D , 4.0D ,3.0D ,12.0D)
             );
+            
             ONE_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
             TWO_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
             THREE_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
