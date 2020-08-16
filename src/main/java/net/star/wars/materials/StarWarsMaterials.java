@@ -60,7 +60,7 @@ public class StarWarsMaterials implements ModInitializer
 
     // Lightsabers
     public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings());
-    public static final LightsaberItem LIGHTSABER_ITEM = new LightsaberItem(new Item.Settings().maxCount(1));
+    public static final LightsaberItem LIGHTSABER_ITEM = new LightsaberItem(new Item.Settings());
     
     public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings());
    
