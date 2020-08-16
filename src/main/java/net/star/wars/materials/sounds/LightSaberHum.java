@@ -11,13 +11,8 @@ import net.star.wars.materials.StarWarsMaterials;
 @Environment(EnvType.CLIENT)
 public class LightSaberHum extends MovingSoundInstance {
     private final PlayerEntity player;
-	// hello this is acoo sad
-    //i am a flat earther of course
-    //but u know that
-    //of courser
-    //ased
-    //a
-    //
+    // please help me! How do I call this class in @link LightsaberItem?
+
     public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
         super(StarWarsMaterials.LIGHTSABER_HUMMING, soundCategory);
         this.player = playerIn;
