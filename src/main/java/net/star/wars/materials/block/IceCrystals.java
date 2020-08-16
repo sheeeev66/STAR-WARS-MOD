@@ -63,9 +63,9 @@ public class IceCrystals extends Block {
         for(int var5 = 0; var5 < var4; ++var5) {
            Direction direction = var3[var5];
            if (direction.getAxis() == Direction.Axis.Y) {
-              BlockState blockState = (BlockState)this.getDefaultState().with(HANGING, direction == Direction.UP);
+              BlockState blockState = this.getDefaultState().with(HANGING, direction == Direction.UP);
               if (blockState.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
-                 return (BlockState)blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
+                 return blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
               }
            }
         } 
@@ -73,10 +73,10 @@ public class IceCrystals extends Block {
         BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
 
         if (blockState.isOf(this)) {
-            return (BlockState)blockState.with(CRYSTALS, Math.min(4, (Integer)blockState.get(CRYSTALS) + 1));
-        } 
-  
-        return null;
+            return blockState.with(CRYSTALS, Math.min(4, (Integer)blockState.get(CRYSTALS) + 1));
+        } else {
+            return super.getPlacementState(ctx);
+        }
     }
 
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
@@ -87,13 +87,13 @@ public class IceCrystals extends Block {
         switch((Integer)state.get(CRYSTALS)) {
         case 1:
         default:
-        return (Boolean)state.get(HANGING) ? ONE_HANGING_SHAPE : ONE_STANDING_SHAPE;
+        return state.get(HANGING) ? ONE_HANGING_SHAPE : ONE_STANDING_SHAPE;
         case 2:
-        return (Boolean)state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
+        return state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
         case 3:
-        return (Boolean)state.get(HANGING) ? THREE_HANGING_SHAPE : THREE_STANDING_SHAPE;
+        return state.get(HANGING) ? THREE_HANGING_SHAPE : THREE_STANDING_SHAPE;
         case 4:
-        return (Boolean)state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
+        return state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
         }
      }
   
