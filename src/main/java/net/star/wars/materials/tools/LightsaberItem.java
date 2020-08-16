@@ -37,6 +37,13 @@ public class LightsaberItem extends Item {
         ItemStack stack = player.getMainHandStack();
         CompoundTag tag = stack.getOrCreateTag();
         lightsaberOn = tag.getBoolean("on");
+
+        // play sound
+        player.playSound(
+            lightsaberOn ? StarWarsMaterials.LIGHTSABER_ON : StarWarsMaterials.LIGHTSABER_OFF,
+            1.0f, 1.0f
+        );
+
         lightsaberOn =  !lightsaberOn;
         tag.putBoolean("on", lightsaberOn); 
 
@@ -44,11 +51,8 @@ public class LightsaberItem extends Item {
 
         if (player.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_ITEM) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM)));
-            player.inventory.insertStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_HILT));
-                if(world.isClient) {
-                    player.playSound(StarWarsMaterials.LIGHTSABER_OFF, 5.0f, 1.0f);
-                }
-            }
+            player.inventory.insertStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM));
+        }
         
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
