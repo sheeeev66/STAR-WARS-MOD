@@ -6,8 +6,8 @@ import net.minecraft.client.sound.MovingSoundInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.sound.SoundCategory;
-import net.star.wars.materials.registry.ItemRegistry;
 import net.star.wars.materials.registry.SoundRegistry;
+import net.star.wars.materials.tools.LightsaberItem;
 
 @Environment(EnvType.CLIENT)
 public class LightSaberHum extends MovingSoundInstance {
@@ -16,16 +16,17 @@ public class LightSaberHum extends MovingSoundInstance {
     //call MinecraftClient.getInstance().getSoundManager().play(); and make a constructor and pass a playerentity and a soundcategory
     //also we are calling this sound in lightsaberhilt, not lightsaber item
 
-    public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
 
+    public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
         super(SoundRegistry.LIGHTSABER_HUMMING, soundCategory);
         this.player = playerIn;
         this.repeat = true;
         this.repeatDelay = 0;
-        this.volume = 0.1F;
+        this.volume = 0.7F;
         this.x = (float) playerIn.getX();
         this.y = (float) playerIn.getY();
         this.z = (float) playerIn.getZ();
+
     }
 
 
@@ -34,7 +35,7 @@ public class LightSaberHum extends MovingSoundInstance {
         this.x = player.getX();
         this.y = player.getY();
         this.z = player.getZ();
-        if (heldItem != ItemRegistry.LIGHTSABER_BLUE) {
+        if (!(heldItem instanceof LightsaberItem)) {
             this.volume = 0;
         }
     }
