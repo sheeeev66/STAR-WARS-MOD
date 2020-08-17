@@ -6,15 +6,19 @@ import net.minecraft.client.sound.MovingSoundInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.sound.SoundCategory;
-import net.star.wars.materials.StarWarsMaterials;
+import net.star.wars.materials.registry.ItemRegistry;
+import net.star.wars.materials.registry.SoundRegistry;
 
 @Environment(EnvType.CLIENT)
 public class LightSaberHum extends MovingSoundInstance {
     private final PlayerEntity player;
     // please help me! How do I call this class in @link LightsaberItem?
+    //call MinecraftClient.getInstance().getSoundManager().play(); and make a constructor and pass a playerentity and a soundcategory
+    //also we are calling this sound in lightsaberhilt, not lightsaber item
 
     public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
-        super(StarWarsMaterials.LIGHTSABER_HUMMING, soundCategory);
+
+        super(SoundRegistry.LIGHTSABER_HUMMING, soundCategory);
         this.player = playerIn;
         this.repeat = true;
         this.repeatDelay = 0;
@@ -30,7 +34,7 @@ public class LightSaberHum extends MovingSoundInstance {
         this.x = player.getX();
         this.y = player.getY();
         this.z = player.getZ();
-        if (heldItem != StarWarsMaterials.LIGHTSABER_ITEM) {
+        if (heldItem != ItemRegistry.LIGHTSABER_BLUE) {
             this.volume = 0;
         }
     }

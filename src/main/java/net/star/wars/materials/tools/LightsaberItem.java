@@ -1,7 +1,5 @@
 package net.star.wars.materials.tools;
 
-import java.util.List;
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
@@ -14,7 +12,10 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.star.wars.materials.StarWarsMaterials;
+import net.star.wars.materials.registry.ItemRegistry;
+import net.star.wars.materials.registry.SoundRegistry;
+
+import java.util.List;
 
 public class LightsaberItem extends Item {
 
@@ -40,21 +41,19 @@ public class LightsaberItem extends Item {
 
         // play sound
         player.playSound(
-            lightsaberOn ? StarWarsMaterials.LIGHTSABER_ON : StarWarsMaterials.LIGHTSABER_OFF,
-            1.0f, 1.0f
+                lightsaberOn ? SoundRegistry.LIGHTSABER_ON : SoundRegistry.LIGHTSABER_OFF,
+                1.0f, 1.0f
         );
 
-        lightsaberOn =  !lightsaberOn;
-        tag.putBoolean("on", lightsaberOn); 
-
-
-        
-/*
-        if (player.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_ITEM) { // this causes the game to crash...
-            player.inventory.removeStack(player.inventory.getSlotWithStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM)));
-            player.inventory.insertStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)), new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM));
+        lightsaberOn = !lightsaberOn;
+        tag.putBoolean("on", lightsaberOn);
+        // this causes the game to crash...
+        if (!world.isClient) {
+           int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
+            player.inventory.removeStack(slot);
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_BLUE));
         }
-*/
-        return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
-    }
+            return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
+        }
+
 }

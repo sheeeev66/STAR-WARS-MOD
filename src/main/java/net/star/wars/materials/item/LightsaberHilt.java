@@ -11,7 +11,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.star.wars.materials.StarWarsMaterials;
+import net.star.wars.materials.registry.ItemRegistry;
+import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.sounds.LightSaberHum;
 
 public class LightsaberHilt extends Item {
@@ -22,11 +23,11 @@ public class LightsaberHilt extends Item {
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        if (player.getStackInHand(hand).getItem() == StarWarsMaterials.LIGHTSABER_HILT) {
+        if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HILT) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
-            player.inventory.insertStack(new ItemStack(StarWarsMaterials.LIGHTSABER_ITEM));
+            player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_BLUE));
             if(world.isClient) {
-                player.playSound(StarWarsMaterials.LIGHTSABER_ON, 3.0f, 1.0f);
+                player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
                 MinecraftClient.getInstance().getSoundManager().play(new LightSaberHum(player, SoundCategory.AMBIENT));
             }
         }

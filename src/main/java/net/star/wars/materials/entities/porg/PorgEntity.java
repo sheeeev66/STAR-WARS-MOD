@@ -6,15 +6,7 @@ import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Flutterer;
 import net.minecraft.entity.ai.control.FlightMoveControl;
-import net.minecraft.entity.ai.goal.AnimalMateGoal;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.FlyOntoTreeGoal;
-import net.minecraft.entity.ai.goal.FollowParentGoal;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.BirdNavigation;
 import net.minecraft.entity.ai.pathing.EntityNavigation;
 import net.minecraft.entity.ai.pathing.PathNodeType;
@@ -35,7 +27,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.star.wars.materials.StarWarsMaterials;
+import net.star.wars.materials.registry.EntityRegistry;
+import net.star.wars.materials.registry.SoundRegistry;
 
 public class PorgEntity extends AnimalEntity implements Flutterer {
 
@@ -115,11 +108,11 @@ public class PorgEntity extends AnimalEntity implements Flutterer {
     }
 
     protected SoundEvent getAmbientSound() {
-        return StarWarsMaterials.PORG_AMBIENT;
+        return SoundRegistry.PORG_AMBIENT;
     }
 
     protected SoundEvent getHurtSound(DamageSource source) {
-        return StarWarsMaterials.PORG_HURT;
+        return SoundRegistry.PORG_HURT;
     }
 
     protected SoundEvent getDeathSound() {
@@ -145,7 +138,7 @@ public class PorgEntity extends AnimalEntity implements Flutterer {
 
     @Override
     public PassiveEntity createChild(ServerWorld arg0, PassiveEntity arg1) {
-        return (PorgEntity) StarWarsMaterials.PORG.create(this.world);
+        return EntityRegistry.PORG.create(this.world);
     }
 
     static {

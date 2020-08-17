@@ -5,7 +5,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.star.wars.materials.StarWarsMaterials;
+import net.star.wars.materials.registry.ItemRegistry;
 
 public class BeskarArmorMaterial implements ArmorMaterial {
 
@@ -34,7 +34,7 @@ public class BeskarArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(StarWarsMaterials.BESKAR_INGOT);
+        return Ingredient.ofItems(ItemRegistry.BESKAR_INGOT);
     }
 
     @Override
