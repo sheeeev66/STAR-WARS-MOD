@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "starwarsmaterials:ice_crystals",
+          "name": "starwarsmaterials:ice_crystal",
           "conditions": [
             {
               "condition": "minecraft:match_tool",

@@ -24,7 +24,7 @@ public class StarWarsMaterialsClient implements ClientModInitializer {
         });
 
         // for ice crystals block transperency
-        BlockRenderLayerMap.INSTANCE.putBlock(StarWarsMaterials.ICE_CRYSTALS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(StarWarsMaterials.ICE_CRYSTALS, RenderLayer.getTranslucent());
         
     }
 }
