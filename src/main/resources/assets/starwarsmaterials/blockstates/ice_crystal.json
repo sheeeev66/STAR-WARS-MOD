@@ -1,9 +1,51 @@
 {
-    "variants": {
-        "": [
-          { "model": "starwarsmaterials:block/ice_crystal_1", "weight": 1 },
-          { "model": "starwarsmaterials:block/ice_crystal_2", "weight": 0 },
-          { "model": "starwarsmaterials:block/ice_crystal_3", "weight": 0 }
-      ]
-    }
+  "variants": {
+    "hanging=false,pickles=1": [
+        {
+          "model": "starwarsmaterials:block/ice_crystal_1"
+        }
+      ],
+
+      "hanging=false,pickles=2": [
+        {
+          "model": "starwarsmaterials:block/ice_crystal_2"
+        }
+      ],
+
+      "hanging=false,pickles=3": [
+        {
+          "model": "starwarsmaterials:block/ice_crystal_3"
+        }
+      ],
+
+      "hanging=false,pickles=4": [
+        {
+          "model": "starwarsmaterials:block/ice_crystal_4"
+        }
+      ],
+      
+      "hanging=true,pickles=1": [
+      {
+        "model": "starwarsmaterials:block/ice_crystal_upside_down_1"
+      }
+    ],
+
+    "hanging=true,pickles=2": [
+      {
+        "model": "starwarsmaterials:block/ice_crystal_upside_down_2"
+      }
+    ],
+
+    "hanging=true,pickles=3": [
+      {
+        "model": "starwarsmaterials:block/ice_crystal_upside_down_3"
+      }
+    ],
+
+    "hanging=true,pickles=4": [
+      {
+        "model": "starwarsmaterials:block/ice_crystal_upside_down_4"
+      }
+    ]
   }
+}
