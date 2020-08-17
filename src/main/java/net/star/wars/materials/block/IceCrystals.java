@@ -6,11 +6,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.IceBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.block.TransparentBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -39,7 +36,7 @@ import net.minecraft.world.WorldView;
 public class IceCrystals extends Block {
 
 	public IceCrystals() {
-        super(FabricBlockSettings.of(Material.ICE).breakInstantly());
+        super(FabricBlockSettings.of(Material.ICE).breakInstantly().nonOpaque());
         this.setDefaultState(((this.stateManager.getDefaultState()).with(HANGING, false)).with(field_26441, false));
         this.setDefaultState(((this.stateManager.getDefaultState()).with(PICKLES, 1)));
     }
