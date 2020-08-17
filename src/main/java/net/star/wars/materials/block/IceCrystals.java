@@ -6,8 +6,11 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GlassBlock;
+import net.minecraft.block.IceBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.TransparentBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -48,10 +51,12 @@ public class IceCrystals extends Block {
     protected static final VoxelShape ONE_STANDING_SHAPE;
     protected static final VoxelShape TWO_STANDING_SHAPE;
     protected static final VoxelShape THREE_STANDING_SHAPE;
+    protected static final VoxelShape FOUR_STANDING_SHAPE;
 
     protected static final VoxelShape ONE_HANGING_SHAPE;
     protected static final VoxelShape TWO_HANGING_SHAPE;
     protected static final VoxelShape THREE_HANGING_SHAPE;
+    protected static final VoxelShape FOUR_HANGING_SHAPE;
  
 
 
@@ -95,7 +100,7 @@ public class IceCrystals extends Block {
         case 3:
         return state.get(HANGING) ? THREE_HANGING_SHAPE : THREE_STANDING_SHAPE;
         case 4:
-        return state.get(HANGING) ? TWO_HANGING_SHAPE : TWO_STANDING_SHAPE;
+        return state.get(HANGING) ? FOUR_HANGING_SHAPE : FOUR_STANDING_SHAPE;
         }
      }
   
@@ -169,26 +174,59 @@ public class IceCrystals extends Block {
             HANGING = Properties.HANGING;
             PICKLES = Properties.PICKLES;
             field_26441 = Properties.WATERLOGGED;
+
             ONE_STANDING_SHAPE = VoxelShapes.union(
-                Block.createCuboidShape(4.0D, 0.0D, 4.0D, 5.0D, 7.0D, 5.0D),
-                Block.createCuboidShape(10.0D, 0.0D, 8.0D, 11.0D, 7.0D, 9.0D),
-                Block.createCuboidShape(4.0D, 0.0D, 5.0D, 5.0D, 3.0D, 6.0D)
+                Block.createCuboidShape(8.0D, 0.0D, 8.0D, 9.0D, 9.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 0.0D, 7.0D, 8.0D, 3.0D, 8.0D)
             );
             
             TWO_STANDING_SHAPE = VoxelShapes.union(
-                Block.createCuboidShape(11.0D, 0.0D, 8.0D, 12.0D, 3.0D, 9.0D),
-                Block.createCuboidShape(5.0D ,0.0D, 4.0D, 6.0D, 4.0D, 5.0D),
-                Block.createCuboidShape(10.0D ,0.0D ,7.0D , 11.0D ,4.0D ,8.0D)
-            );
+                Block.createCuboidShape(8.0D, 0.0D, 8.0D, 9.0D, 9.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 0.0D, 7.0D, 8.0D, 3.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,0.0D ,10.0D , 5.0D ,6.0D ,11.0D)
+                );
 
             THREE_STANDING_SHAPE = VoxelShapes.union(
-                Block.createCuboidShape(4.0D ,0.0D ,12.0D , 5.0D ,8.0D ,13.0D),
-                Block.createCuboidShape(3.0D ,0.0D ,11.0D , 4.0D ,3.0D ,12.0D)
-            );
+                Block.createCuboidShape(8.0D, 0.0D, 8.0D, 9.0D, 9.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 0.0D, 7.0D, 8.0D, 3.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,0.0D ,10.0D , 5.0D ,6.0D ,11.0D),
+                Block.createCuboidShape(10.0D ,0.0D ,5.0D , 11.0D ,6.0D ,6.0D)
+                );
+
+            FOUR_STANDING_SHAPE = VoxelShapes.union(
+                Block.createCuboidShape(8.0D, 0.0D, 8.0D, 9.0D, 9.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 0.0D, 7.0D, 8.0D, 3.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,0.0D ,10.0D , 5.0D ,6.0D ,11.0D),
+                Block.createCuboidShape(10.0D ,0.0D ,5.0D , 11.0D ,6.0D ,6.0D),
+                Block.createCuboidShape(3.0D ,0.0D ,2.0D , 4.0D ,3.0D ,3.0D)
+                );
+
             
-            ONE_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
-            TWO_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
-            THREE_HANGING_SHAPE = VoxelShapes.union(Block.createCuboidShape(5.0D, 1.0D, 5.0D, 11.0D, 8.0D, 11.0D), Block.createCuboidShape(6.0D, 8.0D, 6.0D, 10.0D, 10.0D, 10.0D));
+            ONE_HANGING_SHAPE = VoxelShapes.union(
+                Block.createCuboidShape(8.0D, 7.0D, 8.0D, 9.0D, 16.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 13.0D, 7.0D, 8.0D, 16.0D, 8.0D)
+                );
+            
+            TWO_HANGING_SHAPE = VoxelShapes.union(
+                Block.createCuboidShape(8.0D, 7.0D, 8.0D, 9.0D, 16.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 13.0D, 7.0D, 8.0D, 16.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,10.0D ,10.0D , 5.0D ,16.0D ,11.0D)
+                );
+            
+            THREE_HANGING_SHAPE = VoxelShapes.union(
+                Block.createCuboidShape(8.0D, 7.0D, 8.0D, 9.0D, 16.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 13.0D, 7.0D, 8.0D, 16.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,10.0D ,10.0D , 5.0D ,16.0D ,11.0D),
+                Block.createCuboidShape(10.0D ,10.0D ,5.0D , 11.0D ,16.0D ,6.0D)
+                );
+            
+            FOUR_HANGING_SHAPE = VoxelShapes.union(
+                Block.createCuboidShape(8.0D, 7.0D, 8.0D, 9.0D, 16.0D, 9.0D),
+                Block.createCuboidShape(7.0D, 13.0D, 7.0D, 8.0D, 16.0D, 8.0D),
+                Block.createCuboidShape(4.0D ,10.0D ,10.0D , 5.0D ,16.0D ,11.0D),
+                Block.createCuboidShape(10.0D ,10.0D ,5.0D , 11.0D ,16.0D ,6.0D),
+                Block.createCuboidShape(3.0D ,13.0D ,2.0D , 4.0D ,16.0D ,3.0D)
+                );
     }
 
 }
