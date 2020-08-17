@@ -30,6 +30,7 @@ public class LightsaberItem extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
     }
+    //testing
 
     @Environment(EnvType.CLIENT)
     @Override
