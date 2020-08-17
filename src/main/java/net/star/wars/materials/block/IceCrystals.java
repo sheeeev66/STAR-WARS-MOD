@@ -38,11 +38,11 @@ public class IceCrystals extends Block {
 	public IceCrystals() {
         super(FabricBlockSettings.of(Material.ICE).breakInstantly());
         this.setDefaultState(((this.stateManager.getDefaultState()).with(HANGING, false)).with(field_26441, false));
-        this.setDefaultState(((this.stateManager.getDefaultState()).with(CRYSTALS, 1)));
+        this.setDefaultState(((this.stateManager.getDefaultState()).with(PICKLES, 1)));
     }
 
     public static final BooleanProperty HANGING;
-    public static final IntProperty CRYSTALS;
+    public static final IntProperty PICKLES;
     public static final BooleanProperty field_26441;
 
     protected static final VoxelShape ONE_STANDING_SHAPE;
@@ -56,35 +56,37 @@ public class IceCrystals extends Block {
 
 
     public BlockState getPlacementState(ItemPlacementContext ctx) {
+        BlockState blockState1 = ctx.getWorld().getBlockState(ctx.getBlockPos());
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
         Direction[] var3 = ctx.getPlacementDirections();
         int var4 = var3.length;
-  
+
         for(int var5 = 0; var5 < var4; ++var5) {
-           Direction direction = var3[var5];
-           if (direction.getAxis() == Direction.Axis.Y) {
-              BlockState blockState = this.getDefaultState().with(HANGING, direction == Direction.UP);
-              if (blockState.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
-                 return blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
-              }
-           }
-        } 
 
-        BlockState blockState = ctx.getWorld().getBlockState(ctx.getBlockPos());
+            Direction direction = var3[var5];
+            if (direction.getAxis() == Direction.Axis.Y) {
+                if (blockState1.isOf(this)) {
+                    return blockState1.with(PICKLES, Math.min(4, (Integer)blockState1.get(PICKLES) + 1));
+                }
+                BlockState blockState = this.getDefaultState().with(HANGING, direction == Direction.UP);
+                if (blockState.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
+                    return blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
+                } else {
+                    return super.getPlacementState(ctx);
+                }
 
-        if (blockState.isOf(this)) {
-            return blockState.with(CRYSTALS, Math.min(4, (Integer)blockState.get(CRYSTALS) + 1));
-        } else {
-            return super.getPlacementState(ctx);
+            }
         }
+        return null;
     }
 
+
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
-        return context.getStack().getItem() == this.asItem() && (Integer)state.get(CRYSTALS) < 4 ? true : super.canReplace(state, context);
+        return context.getStack().getItem() == this.asItem() && (Integer)state.get(PICKLES) < 4 ? true : super.canReplace(state, context);
      }
   
      public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch((Integer)state.get(CRYSTALS)) {
+        switch((Integer)state.get(PICKLES)) {
         case 1:
         default:
         return state.get(HANGING) ? ONE_HANGING_SHAPE : ONE_STANDING_SHAPE;
@@ -98,7 +100,7 @@ public class IceCrystals extends Block {
      }
   
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(HANGING, field_26441, CRYSTALS);
+        builder.add(HANGING, PICKLES, field_26441);
     }
   
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
@@ -165,7 +167,7 @@ public class IceCrystals extends Block {
 
     static {
             HANGING = Properties.HANGING;
-            CRYSTALS = Properties.PICKLES;
+            PICKLES = Properties.PICKLES;
             field_26441 = Properties.WATERLOGGED;
             ONE_STANDING_SHAPE = VoxelShapes.union(
                 Block.createCuboidShape(4.0D, 0.0D, 4.0D, 5.0D, 7.0D, 5.0D),
