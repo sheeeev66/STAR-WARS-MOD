@@ -12,6 +12,7 @@ import net.star.wars.materials.entities.porg.PorgEntity;
 import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
 
 public class EntityRegistry {
+    // porg
     public static final EntityType<PorgEntity> PORG = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(MOD_ID, "porg"),

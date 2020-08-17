@@ -12,6 +12,8 @@ public class BlockRegistry {
     ///// Ores ////
     // Beskar
     public static final BeskarOre BESKAR_ORE = new BeskarOre();
+
+    
     public static void initalize(){
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "beskar_ore"), BESKAR_ORE);
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "ice_crystal"), ICE_CRYSTALS);

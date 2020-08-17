@@ -10,6 +10,7 @@ import net.star.wars.materials.registry.SoundRegistry;
 public class StarWarsMaterials implements ModInitializer
 {   
     public static final String MOD_ID = "starwarsmaterials";
+    
     @Override
     public void onInitialize()
     {
