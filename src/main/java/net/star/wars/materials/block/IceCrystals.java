@@ -19,6 +19,8 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
@@ -68,13 +70,13 @@ public class IceCrystals extends Block {
                 if (blockState1.isOf(this)) {
                     return blockState1.with(PICKLES, Math.min(4, (Integer)blockState1.get(PICKLES) + 1));
                 }
+
                 BlockState blockState = this.getDefaultState().with(HANGING, direction == Direction.UP);
                 if (blockState.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
                     return blockState.with(field_26441, fluidState.getFluid() == Fluids.WATER);
                 } else {
                     return super.getPlacementState(ctx);
                 }
-
             }
         }
         return null;
