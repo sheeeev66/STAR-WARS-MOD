@@ -4,7 +4,7 @@
       "model": "starwarsmaterials:block/ice_crystal_1"
     },
     "hanging=true": {
-      "model": "minecraft:block/lantern_hanging"
+      "model": "starwarsmaterials:block/ice_crystal_upside_down_1"
     }
   }
 }
