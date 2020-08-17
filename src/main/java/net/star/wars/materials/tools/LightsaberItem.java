@@ -30,6 +30,7 @@ public class LightsaberItem extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
     }
+    //testing
 
     @Environment(EnvType.CLIENT)
     @Override
@@ -41,7 +42,7 @@ public class LightsaberItem extends Item {
 
         // play sound
         player.playSound(
-                lightsaberOn ? SoundRegistry.LIGHTSABER_ON : SoundRegistry.LIGHTSABER_OFF,
+                SoundRegistry.LIGHTSABER_OFF,
                 1.0f, 1.0f
         );
 
@@ -51,9 +52,10 @@ public class LightsaberItem extends Item {
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
             player.inventory.removeStack(slot);
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_BLUE));
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HILT));
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
         }
+
 
 }
