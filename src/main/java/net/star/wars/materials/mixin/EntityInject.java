@@ -11,7 +11,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.star.wars.materials.tools.AbstractLightsaberItem;
+import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,18 +19,37 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Environment(EnvType.CLIENT)
 @Mixin(Entity.class)
-public class EntityInject {
+public abstract class EntityInject {
 
     @Shadow public World world;
+
+    @Shadow public abstract double getX();
+
+    @Shadow public abstract double getY();
+
+    @Shadow public abstract double getZ();
+
     //Will not work until sound is actually added
     // so we will use anvil sound
     @Inject(method = "playStepSound", at = @At("TAIL"))
     private final void playStepSound(BlockPos pos, BlockState state, CallbackInfo ci) {
-        PlayerEntity playerEntity = this.world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
+        PlayerEntity playerEntity = this.world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 3, true);
+      //  System.out.println(playerEntity);
+        if (playerEntity != null) {
+            ItemStack stack = playerEntity.getStackInHand(Hand.MAIN_HAND);
+            System.out.println(stack);
+            if (stack.getItem() instanceof AbstractLightsaberItem){
+                System.out.println("played Sound");
+                playerEntity.playSound(SoundEvents.BLOCK_ANVIL_LAND, 1f, 1f);
+            }
+        }
+    }
+    @Inject(method = "playSwimSound", at = @At("TAIL"))
+    private final void playSwimSound(float volume, CallbackInfo ci){
+        PlayerEntity playerEntity = this.world.getClosestPlayer(getX(), getY(), getZ(), 3, true);
         System.out.println(playerEntity);
         if (playerEntity != null) {
             ItemStack stack = playerEntity.getStackInHand(Hand.MAIN_HAND);
-
             System.out.println(stack);
             if (stack.getItem() instanceof AbstractLightsaberItem){
                 System.out.println("played Sound");

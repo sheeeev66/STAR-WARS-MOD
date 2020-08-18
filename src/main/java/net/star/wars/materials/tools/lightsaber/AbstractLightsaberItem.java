@@ -1,12 +1,13 @@
-package net.star.wars.materials.tools;
+package net.star.wars.materials.tools.lightsaber;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -18,10 +19,11 @@ import net.star.wars.materials.registry.SoundRegistry;
 
 import java.util.List;
 
-public class AbstractLightsaberItem extends Item {
+public class AbstractLightsaberItem extends SwordItem {
 
-    public AbstractLightsaberItem(Settings settings) {
-        super(settings);
+    public AbstractLightsaberItem(Settings settings, ToolMaterial lightsaberMaterial) {
+        super(lightsaberMaterial, 0, 10f, settings);
+
     }
 
     boolean lightsaberOn;
@@ -40,6 +42,7 @@ public class AbstractLightsaberItem extends Item {
         //warning, sound not registered or located yet so it wont work
         return true;
     }
+
 
     @Environment(EnvType.CLIENT)
     @Override
@@ -60,7 +63,7 @@ public class AbstractLightsaberItem extends Item {
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
             player.inventory.removeStack(slot);
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HILT));
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE));
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
         }

@@ -15,15 +15,15 @@ import net.star.wars.materials.registry.ItemRegistry;
 import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.sounds.LightSaberHum;
 
-public class LightsaberHilt extends Item {
+public class LightsaberHandle extends Item {
 
-    public LightsaberHilt(Settings settings) {
+    public LightsaberHandle(Settings settings) {
         super(settings);
     }
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HILT) {
+        if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HANDLE) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
             player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_ITEM));
             player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
