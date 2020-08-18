@@ -15,7 +15,8 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.star.wars.materials.armor.BaseArmor;
 import net.star.wars.materials.item.BeskarIngot;
-import net.star.wars.materials.item.BlueKyberCrystal;
+import net.star.wars.materials.item.KyberCrystalsColors.BlueKyberCrystal;
+import net.star.wars.materials.item.KyberCrystalsColors.GreenKyberCrystal;
 import net.star.wars.materials.item.CookedPorg;
 import net.star.wars.materials.item.DeathSticks;
 import net.star.wars.materials.item.KyberCrystal;
@@ -33,6 +34,7 @@ public class ItemRegistry {
     public static final KyberCrystal KYBER_CRYSTAL =  new KyberCrystal(new Item.Settings());
 
     public static final BlueKyberCrystal BLUE_KYBER_CRYSTAL =  new BlueKyberCrystal(new Item.Settings());
+    public static final GreenKyberCrystal GREEN_KYBER_CRYSTAL =  new GreenKyberCrystal(new Item.Settings());
 
     // Food
     public static final RawPorg RAW_PORG = new RawPorg(new Item.Settings().group(ItemGroup.FOOD)
@@ -59,6 +61,8 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "kyber_crystal"), KYBER_CRYSTAL);
         
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "blue_kyber_crystal"), BLUE_KYBER_CRYSTAL);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "green_kyber_crystal"), GREEN_KYBER_CRYSTAL);
+
 
         // spawn eggs
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "porg_spawn_egg"),
