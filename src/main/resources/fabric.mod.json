@@ -24,18 +24,22 @@
     "main": [
       "net.star.wars.materials.StarWarsMaterials"
     ],
+
     "client": [
       "net.star.wars.materials.StarWarsMaterialsClient"
-  ]
+    ]
   },
+
   "mixins": [
     "starwars.materials.mixins.json"
   ],
+
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": "1.16.x"
   },
+
   "suggests": {
     "flamingo": "*"
   }

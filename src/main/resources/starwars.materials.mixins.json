@@ -6,7 +6,7 @@
     "EntityInject"
   ],
   "client": [
-
+    
   ],
   "injectors": {
     "defaultRequire": 1
