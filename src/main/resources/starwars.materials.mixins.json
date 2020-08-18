@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.star.wars.materials.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "EntityInject"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

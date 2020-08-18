@@ -28,7 +28,9 @@
       "net.star.wars.materials.StarWarsMaterialsClient"
   ]
   },
-
+  "mixins": [
+    "starwars.materials.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
