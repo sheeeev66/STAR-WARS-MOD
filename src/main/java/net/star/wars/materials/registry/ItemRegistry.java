@@ -1,18 +1,29 @@
 package net.star.wars.materials.registry;
 
+import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
+
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.star.wars.materials.armor.BaseArmor;
-import net.star.wars.materials.item.*;
+import net.star.wars.materials.item.BeskarIngot;
+import net.star.wars.materials.item.BlueKyberCrystal;
+import net.star.wars.materials.item.CookedPorg;
+import net.star.wars.materials.item.DeathSticks;
+import net.star.wars.materials.item.KyberCrystal;
+import net.star.wars.materials.item.LightsaberHilt;
+import net.star.wars.materials.item.Plastoid;
+import net.star.wars.materials.item.RawPorg;
 import net.star.wars.materials.tools.AbstractLightsaberItem;
 import net.star.wars.materials.tools.LightsaberBlue;
-
-import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
 
 public class ItemRegistry {
     public static final BeskarIngot BESKAR_INGOT = new BeskarIngot(new Item.Settings());

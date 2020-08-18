@@ -40,6 +40,12 @@
     "Subtitles.starwarsmaterials.lightsaber_on": "Lightsaber On",
     "Subtitles.starwarsmaterials.lightsaber_off": "Lightsaber Off",
     "Subtitles.starwarsmaterials.lightsaber_humming": "Lightsaber Humming",
-    "Subtitles.starwarsmaterials.lightsaber_move": "Lightsaber Move",
-    "Subtitles.starwarsmaterials.lightsaber_hit": "Lightsaber Hit"
+    "Subtitles.starwarsmaterials.lightsaber_move_1": "Lightsaber Move",
+    "Subtitles.starwarsmaterials.lightsaber_move_2": "Lightsaber Move",
+    "Subtitles.starwarsmaterials.lightsaber_move_3": "Lightsaber Move",
+    "Subtitles.starwarsmaterials.lightsaber_move_4": "Lightsaber Move",
+    "Subtitles.starwarsmaterials.lightsaber_hit_1": "Lightsaber Hit",
+    "Subtitles.starwarsmaterials.lightsaber_hit_2": "Lightsaber Hit",
+    "Subtitles.starwarsmaterials.lightsaber_hit_3": "Lightsaber Hit",
+    "Subtitles.starwarsmaterials.lightsaber_hit_4": "Lightsaber Hit"
 }

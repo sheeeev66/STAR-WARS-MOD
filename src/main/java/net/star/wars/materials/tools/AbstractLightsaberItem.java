@@ -36,7 +36,7 @@ public class AbstractLightsaberItem extends Item {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        attacker.playSound(SoundRegistry.LIGHTSABER_HIT, 1f, 1f);
+        attacker.playSound(SoundRegistry.LIGHTSABER_HIT_ONE, 1f, 1f);
         //warning, sound not registered or located yet so it wont work
         return true;
     }

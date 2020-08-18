@@ -37,15 +37,57 @@
         ]
     },
 
-    "lightsaber_move": {
-        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move",
+    "lightsaber_move_1": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move_1",
         "sounds": [
-            "starwarsmaterials:lightsaber_move"
+            "starwarsmaterials:lightsaber_move_1"
         ]
     },
 
-    "lightsaber_hit": {
-        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit",
+    "lightsaber_move_2": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move_2",
+        "sounds": [
+            "starwarsmaterials:lightsaber_move_2"
+        ]
+    },
+
+    "lightsaber_move_3": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move_3",
+        "sounds": [
+            "starwarsmaterials:lightsaber_move_3"
+        ]
+    },
+
+    "lightsaber_move_4": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_move_4",
+        "sounds": [
+            "starwarsmaterials:lightsaber_move_4"
+        ]
+    },
+
+    "lightsaber_hit_1": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_1",
+        "sounds": [
+            "starwarsmaterials:lightsaber_hit"
+        ]
+    },
+
+    "lightsaber_hit_2": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_2",
+        "sounds": [
+            "starwarsmaterials:lightsaber_hit"
+        ]
+    },
+
+    "lightsaber_hit_3": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_3",
+        "sounds": [
+            "starwarsmaterials:lightsaber_hit"
+        ]
+    },
+
+    "lightsaber_hit_4": {
+        "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_4",
         "sounds": [
             "starwarsmaterials:lightsaber_hit"
         ]

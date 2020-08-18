@@ -24,11 +24,32 @@ public class SoundRegistry {
     public static SoundEvent LIGHTSABER_HUMMING = new SoundEvent(LIGHTSABER_HUMMING_ID);
 
     // MOVE
-    public static final Identifier LIGHTSABER_MOVE_ID = new Identifier("starwarsmaterials:lightsaber_move");
-    public static SoundEvent LIGHTSABER_MOVE = new SoundEvent(LIGHTSABER_MOVE_ID);
+    public static final Identifier LIGHTSABER_MOVE_ONE_ID = new Identifier("starwarsmaterials:lightsaber_move_1");
+    public static SoundEvent LIGHTSABER_MOVE_ONE = new SoundEvent(LIGHTSABER_MOVE_ONE_ID);
+
+    public static final Identifier LIGHTSABER_MOVE_TWO_ID = new Identifier("starwarsmaterials:lightsaber_move_2");
+    public static SoundEvent LIGHTSABER_MOVE_TWO = new SoundEvent(LIGHTSABER_MOVE_TWO_ID);
+
+    public static final Identifier LIGHTSABER_MOVE_THREE_ID = new Identifier("starwarsmaterials:lightsaber_move_3");
+    public static SoundEvent LIGHTSABER_MOVE_THREE = new SoundEvent(LIGHTSABER_MOVE_THREE_ID);
+
+    public static final Identifier LIGHTSABER_MOVE_FOUR_ID = new Identifier("starwarsmaterials:lightsaber_move_4");
+    public static SoundEvent LIGHTSABER_MOVE_FOUR = new SoundEvent(LIGHTSABER_MOVE_FOUR_ID);
+
     // HIT
-    public static final Identifier LIGHTSABER_HIT_ID = new Identifier("starwarsmaterials:lightsaber_hit");
-    public static SoundEvent LIGHTSABER_HIT = new SoundEvent(LIGHTSABER_HIT_ID);
+    public static final Identifier LIGHTSABER_HIT_ONE_ID = new Identifier("starwarsmaterials:lightsaber_hit_1");
+    public static SoundEvent LIGHTSABER_HIT_ONE = new SoundEvent(LIGHTSABER_HIT_ONE_ID);
+
+    public static final Identifier LIGHTSABER_HIT_TWO_ID = new Identifier("starwarsmaterials:lightsaber_hit_2");
+    public static SoundEvent LIGHTSABER_HIT_TWO = new SoundEvent(LIGHTSABER_HIT_TWO_ID);
+
+    public static final Identifier LIGHTSABER_HIT_THREE_ID = new Identifier("starwarsmaterials:lightsaber_hit_3");
+    public static SoundEvent LIGHTSABER_HIT_THREE = new SoundEvent(LIGHTSABER_HIT_THREE_ID);
+
+    public static final Identifier LIGHTSABER_HIT_FOUR_ID = new Identifier("starwarsmaterials:lightsaber_hit_4");
+    public static SoundEvent LIGHTSABER_HIT_FOUR = new SoundEvent(LIGHTSABER_HIT_FOUR_ID);
+
+    ////////////////////////// initialize //////////////////////////
     public static void initialize(){
         Registry.register(Registry.SOUND_EVENT, SoundRegistry.PORG_AMBIENT_ID, PORG_AMBIENT);
         Registry.register(Registry.SOUND_EVENT, SoundRegistry.PORG_HURT_ID, PORG_HURT);
