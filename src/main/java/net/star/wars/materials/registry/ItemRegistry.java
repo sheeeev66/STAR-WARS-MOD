@@ -9,8 +9,8 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.star.wars.materials.armor.BaseArmor;
 import net.star.wars.materials.item.*;
+import net.star.wars.materials.tools.AbstractLightsaberItem;
 import net.star.wars.materials.tools.LightsaberBlue;
-import net.star.wars.materials.tools.LightsaberItem;
 
 import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
 
@@ -34,7 +34,7 @@ public class ItemRegistry {
 
     // Lightsabers
     public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-    public static final LightsaberItem LIGHTSABER_ITEM = new LightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
+    public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
 
     public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings().group(GroupRegistry.Weapons_Group));
 

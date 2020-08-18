@@ -18,9 +18,9 @@ import net.star.wars.materials.registry.SoundRegistry;
 
 import java.util.List;
 
-public class LightsaberItem extends Item {
+public class AbstractLightsaberItem extends Item {
 
-    public LightsaberItem(Settings settings) {
+    public AbstractLightsaberItem(Settings settings) {
         super(settings);
     }
 
