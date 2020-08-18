@@ -3,6 +3,7 @@ package net.star.wars.materials.tools;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,14 @@ public class LightsaberItem extends Item {
     }
     //testing
 
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        attacker.playSound(SoundRegistry.LIGHTSABER_HIT, 1f, 1f);
+        //warning, sound not registered or located yet so it wont work
+        return true;
+    }
+
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
@@ -48,7 +57,6 @@ public class LightsaberItem extends Item {
 
         lightsaberOn = !lightsaberOn;
         tag.putBoolean("on", lightsaberOn);
-        // this causes the game to crash...
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
             player.inventory.removeStack(slot);
