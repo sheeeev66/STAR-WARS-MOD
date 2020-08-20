@@ -3,10 +3,13 @@
   "package": "net.star.wars.materials.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "EntityInject"
   ],
   "client": [
+<<<<<<< HEAD
     
+=======
+    "EntityInject"
+>>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
   ],
   "injectors": {
     "defaultRequire": 1

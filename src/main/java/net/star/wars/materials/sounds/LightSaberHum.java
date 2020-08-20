@@ -7,7 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.sound.SoundCategory;
 import net.star.wars.materials.registry.SoundRegistry;
-import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
+import net.star.wars.materials.tools.AbstractLightsaberItem;
 
 @Environment(EnvType.CLIENT)
 public class LightSaberHum extends MovingSoundInstance {

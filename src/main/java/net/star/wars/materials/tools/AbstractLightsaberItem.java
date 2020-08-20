@@ -1,13 +1,12 @@
-package net.star.wars.materials.tools.lightsaber;
+package net.star.wars.materials.tools;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -19,11 +18,10 @@ import net.star.wars.materials.registry.SoundRegistry;
 
 import java.util.List;
 
-public class AbstractLightsaberItem extends SwordItem {
+public class AbstractLightsaberItem extends Item {
 
-    public AbstractLightsaberItem(Settings settings, ToolMaterial lightsaberMaterial) {
-        super(lightsaberMaterial, 0, 10f, settings);
-
+    public AbstractLightsaberItem(Settings settings) {
+        super(settings);
     }
 
     boolean lightsaberOn;
@@ -43,7 +41,6 @@ public class AbstractLightsaberItem extends SwordItem {
         return true;
     }
 
-
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
@@ -62,8 +59,13 @@ public class AbstractLightsaberItem extends SwordItem {
         tag.putBoolean("on", lightsaberOn);
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
+<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
             player.inventory.removeStack(slot); /*
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE)); */
+=======
+            player.inventory.removeStack(slot);
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HILT));
+>>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
         }
