@@ -1,5 +1,9 @@
 package net.star.wars.materials.item;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,15 +19,53 @@ public class KyberCrystal extends Item {
         super(settings);
     }
 
-    // get random number between 1 - 5
-    int random = (int)(Math.random() * 5 + 1);
+    Random random = new Random();
+
+    public String green = "green";
+    public String blue = "blue";
+    public String purple = "purple";
+
+    List<String> colors = new ArrayList<>();
+
+    private void newColorPosibility() {
+        colors.add(green);
+        colors.add(blue);
+    }
+
+    int getRandomColor;
+    String selectedColor;
+
+    private String selectColor() {
+        getRandomColor = random.nextInt(colors.size());
+        selectedColor = colors.get(getRandomColor);
+
+        return selectedColor;
+    }
+
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
+
+        newColorPosibility();
+        selectColor();
+
+        if (selectedColor == green) {
+            player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.GREEN_KYBER_CRYSTAL));
+        }
+
+        if (selectedColor == blue) {
+            player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.BLUE_KYBER_CRYSTAL));
+        }
+
+        if (selectedColor == purple) {
+            player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.PURPLE_KYBER_CRYSTAL));
+        }
 
         
-        int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
-        player.inventory.setStack(slot, new ItemStack(ItemRegistry.BLUE_KYBER_CRYSTAL));
 
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
