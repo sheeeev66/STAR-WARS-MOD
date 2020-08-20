@@ -20,13 +20,12 @@ public class LightsaberHilt extends Item {
     public LightsaberHilt(Settings settings) {
         super(settings);
     }
-    /*
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HILT) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
-            // player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_ITEM));
+            player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_ITEM));
             player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
             if(world.isClient) {
                 MinecraftClient.getInstance().getSoundManager().play(new LightSaberHum(player, SoundCategory.AMBIENT));
@@ -36,5 +35,5 @@ public class LightsaberHilt extends Item {
 
 
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
-    } */
+    }
 }
