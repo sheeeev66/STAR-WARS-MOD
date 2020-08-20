@@ -66,7 +66,10 @@ public class AbstractLightsaberItem extends Item {
             player.inventory.removeStack(slot);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HILT));
 <<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
+<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
 >>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
+=======
+>>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
 =======
 >>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
         }

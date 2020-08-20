@@ -19,8 +19,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
 =======
+=======
+>>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
 =======
 >>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
 import net.star.wars.materials.tools.AbstractLightsaberItem;
