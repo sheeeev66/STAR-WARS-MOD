@@ -1,5 +1,10 @@
 package net.star.wars.materials.mixin;
 
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,28 +16,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
+import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.tools.AbstractLightsaberItem;
-=======
->>>>>>> parent of 2db674f... turned errors that prevent compiling into comments for debuging
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-<<<<<<< HEAD
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
->>>>>>> parent of 2db674f... turned errors that prevent compiling into comments for debuging
+
 @Environment(EnvType.CLIENT)
 @Mixin(Entity.class)
 public class EntityInject {
@@ -50,9 +36,8 @@ public class EntityInject {
             System.out.println(stack);
             if (stack.getItem() instanceof AbstractLightsaberItem){
                 System.out.println("played Sound");
-                playerEntity.playSound(SoundEvents.BLOCK_ANVIL_LAND, 1f, 1f);
+                playerEntity.playSound(SoundRegistry.LIGHTSABER_MOVE_FOUR /* can you make it choose between 1 - 4? */ , 1f, 1f);
             }
         }
     }
-
 }

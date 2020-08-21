@@ -24,10 +24,10 @@ public class GroupRegistry {
                 stacks.add(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
                 stacks.add(new ItemStack(BlockRegistry.ICE_CRYSTALS));
             })
-            .build();
+            .build(); /*
     public static final ItemGroup Weapons_Group = FabricItemGroupBuilder.build(
             new Identifier(MOD_ID, "general"),
-            () -> new ItemStack(ItemRegistry.LIGHTSABER_BLUE));
+            () -> new ItemStack(ItemRegistry.LIGHTSABER_BLUE)); */
 
     public static final ItemGroup FOOD_GROUP = FabricItemGroupBuilder.create(
             new Identifier(MOD_ID, "food"))

@@ -24,12 +24,30 @@ public class KyberCrystal extends Item {
     public String green = "green";
     public String blue = "blue";
     public String purple = "purple";
+    public String yellow = "yellow";
 
     List<String> colors = new ArrayList<>();
 
     private void newColorPosibility() {
-        colors.add(green);
-        colors.add(blue);
+        int i = 40;
+        int o = 5;
+
+        while (i >= 1) {
+            colors.add(blue);
+            colors.add(green);
+            
+
+            i = i - 1;
+        }
+
+        while  (o >= 1) {
+            colors.add(yellow);
+
+            o = o - 1;
+        }
+
+        colors.add(purple);
+
     }
 
     int getRandomColor;
@@ -51,23 +69,28 @@ public class KyberCrystal extends Item {
         selectColor();
 
         if (selectedColor == green) {
-            player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
+            player.inventory.removeStack(slot, 1);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.GREEN_KYBER_CRYSTAL));
         }
 
         if (selectedColor == blue) {
-            player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
+            player.inventory.removeStack(slot, 1);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.BLUE_KYBER_CRYSTAL));
         }
 
         if (selectedColor == purple) {
+            player.inventory.removeStack(slot, 1);
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.PURPLE_KYBER_CRYSTAL));
+        }
+
+        if (selectedColor == yellow) {
             player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.PURPLE_KYBER_CRYSTAL));
         }
 
-        
 
-        
+
+        colors.clear();
 
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }

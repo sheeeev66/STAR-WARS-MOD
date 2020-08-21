@@ -20,7 +20,8 @@ public class LightsaberHilt extends Item {
     public LightsaberHilt(Settings settings) {
         super(settings);
     }
-    @Environment(EnvType.CLIENT)
+    /*
+    @Environment(EnvType.CLIENT) 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HILT) {
@@ -35,5 +36,5 @@ public class LightsaberHilt extends Item {
 
 
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
-    }
+    } */
 }

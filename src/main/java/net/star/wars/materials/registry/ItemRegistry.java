@@ -17,17 +17,11 @@ import net.star.wars.materials.armor.BaseArmor;
 import net.star.wars.materials.item.BeskarIngot;
 import net.star.wars.materials.item.KyberCrystalsColors.BlueKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.GreenKyberCrystal;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import net.star.wars.materials.item.KyberCrystalsColors.PurpleKyberCrystal;
 
 import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
-=======
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
+
 import net.star.wars.materials.item.CookedPorg;
 import net.star.wars.materials.item.DeathSticks;
 import net.star.wars.materials.item.KyberCrystal;
@@ -36,13 +30,6 @@ import net.star.wars.materials.item.Plastoid;
 import net.star.wars.materials.item.RawPorg;
 import net.star.wars.materials.tools.AbstractLightsaberItem;
 import net.star.wars.materials.tools.LightsaberBlue;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
 
 public class ItemRegistry {
     public static final BeskarIngot BESKAR_INGOT = new BeskarIngot(new Item.Settings());
@@ -64,10 +51,8 @@ public class ItemRegistry {
             .food(new FoodComponent.Builder().alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 20*60*2).build()));
 
     // Lightsabers
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     /*
+
     public static final LightsaberHandle LIGHTSABER_HANDLE = new LightsaberHandle(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
     public static final Item LightSaber_Hilt = new Item(new Item.Settings().group(GroupRegistry.Weapons_Group));
     //testing toolMaterials
@@ -75,24 +60,15 @@ public class ItemRegistry {
     public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
 
     public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings().group(GroupRegistry.Weapons_Group), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
-*/
-=======
+
+
     public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
     public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
 
-=======
     public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-    public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
 
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
-    public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-    public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
-
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
     public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings().group(GroupRegistry.Weapons_Group));
-
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
+*/
 
     public static void initialize(){
         // random items
@@ -118,21 +94,15 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "death_sticks"), DEATH_STICKS);
 
         // items
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         /*
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_handle"), LIGHTSABER_HANDLE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LightSaber_Hilt); 
-=======
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
+
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
-=======
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber"), LIGHTSABER_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_blue"), LIGHTSABER_BLUE); */
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beskar_ore"), new BlockItem(BlockRegistry.BESKAR_ORE, new Item.Settings()));

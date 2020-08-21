@@ -40,7 +40,7 @@ public class AbstractLightsaberItem extends Item {
         //warning, sound not registered or located yet so it wont work
         return true;
     }
-
+/*
     @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
@@ -59,27 +59,10 @@ public class AbstractLightsaberItem extends Item {
         tag.putBoolean("on", lightsaberOn);
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
-<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
-<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
-            player.inventory.removeStack(slot); /*
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE)); */
-=======
-            player.inventory.removeStack(slot);
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HILT));
-<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
-<<<<<<< HEAD:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/AbstractLightsaberItem.java
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
-=======
->>>>>>> parent of 98b1ec3... Added updates to mixins and Lightsaber Items and how they are created:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
-=======
-            player.inventory.removeStack(slot);
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE));
->>>>>>> parent of 2db674f... turned errors that prevent compiling into comments for debuging:src/main/java/net/star/wars/materials/tools/lightsaber/AbstractLightsaberItem.java
+            player.inventory.removeStack(slot); 
+            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE)); 
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
-        }
+        } */
+    }
 
-
-}
