@@ -2,10 +2,10 @@ package net.star.wars.materials.item.KyberCrystalsColors;
 
 import net.minecraft.item.Item;
 
-public class GreenKyberCrystal extends Item {
+public class PurpleKyberCrystal extends Item {
 
-    public GreenKyberCrystal(Settings settings) {
+    public PurpleKyberCrystal(Settings settings) {
         super(settings);
     }
-    
+
 }
