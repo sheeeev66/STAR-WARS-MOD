@@ -1,9 +1,7 @@
 package net.star.wars.materials.item;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,6 +10,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.star.wars.materials.registry.ItemRegistry;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class KyberCrystal extends Item {
 
@@ -60,7 +62,7 @@ public class KyberCrystal extends Item {
         return selectedColor;
     }
 
-
+    @Environment(EnvType.CLIENT)
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
@@ -68,22 +70,22 @@ public class KyberCrystal extends Item {
         newColorPosibility();
         selectColor();
 
-        if (selectedColor == green) {
+        if (selectedColor.equals(green)) {
             player.inventory.removeStack(slot, 1);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.GREEN_KYBER_CRYSTAL));
         }
 
-        if (selectedColor == blue) {
+        if (selectedColor.equals(blue)) {
             player.inventory.removeStack(slot, 1);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.BLUE_KYBER_CRYSTAL));
         }
 
-        if (selectedColor == purple) {
+        if (selectedColor.equals(purple)) {
             player.inventory.removeStack(slot, 1);
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.PURPLE_KYBER_CRYSTAL));
         }
 
-        if (selectedColor == yellow) {
+        if (selectedColor.equals(yellow)) {
             player.inventory.removeOne(new ItemStack(ItemRegistry.KYBER_CRYSTAL));
             player.inventory.insertStack(slot, new ItemStack(ItemRegistry.PURPLE_KYBER_CRYSTAL));
         }

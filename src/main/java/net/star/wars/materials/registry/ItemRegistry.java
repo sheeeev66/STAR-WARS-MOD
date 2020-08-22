@@ -1,35 +1,23 @@
 package net.star.wars.materials.registry;
 
-import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
-
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.star.wars.materials.armor.BaseArmor;
-import net.star.wars.materials.item.BeskarIngot;
+import net.star.wars.materials.item.*;
 import net.star.wars.materials.item.KyberCrystalsColors.BlueKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.GreenKyberCrystal;
-
 import net.star.wars.materials.item.KyberCrystalsColors.PurpleKyberCrystal;
+import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
+import net.star.wars.materials.tools.lightsaber.LightsaberBlue;
+import net.star.wars.materials.tools.lightsaber.LightsaberToolMaterial;
 
 import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
-
-import net.star.wars.materials.item.CookedPorg;
-import net.star.wars.materials.item.DeathSticks;
-import net.star.wars.materials.item.KyberCrystal;
-import net.star.wars.materials.item.LightsaberHilt;
-import net.star.wars.materials.item.Plastoid;
-import net.star.wars.materials.item.RawPorg;
-import net.star.wars.materials.tools.AbstractLightsaberItem;
-import net.star.wars.materials.tools.LightsaberBlue;
 
 public class ItemRegistry {
     public static final BeskarIngot BESKAR_INGOT = new BeskarIngot(new Item.Settings());
@@ -51,9 +39,9 @@ public class ItemRegistry {
             .food(new FoodComponent.Builder().alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 20*60*2).build()));
 
     // Lightsabers
-    /*
 
-    public static final LightsaberHandle LIGHTSABER_HANDLE = new LightsaberHandle(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
+
+    public static final LightsaberHilt LIGHTSABER_HANDLE = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
     public static final Item LightSaber_Hilt = new Item(new Item.Settings().group(GroupRegistry.Weapons_Group));
     //testing toolMaterials
     
@@ -63,12 +51,7 @@ public class ItemRegistry {
 
 
     public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-    public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1));
 
-    public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-
-    public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings().group(GroupRegistry.Weapons_Group));
-*/
 
     public static void initialize(){
         // random items
@@ -94,7 +77,7 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "death_sticks"), DEATH_STICKS);
 
         // items
-        /*
+
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_handle"), LIGHTSABER_HANDLE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LightSaber_Hilt); 
 
@@ -104,7 +87,7 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber"), LIGHTSABER_ITEM);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_blue"), LIGHTSABER_BLUE); */
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_blue"), LIGHTSABER_BLUE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beskar_ore"), new BlockItem(BlockRegistry.BESKAR_ORE, new Item.Settings()));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ice_crystal"), new BlockItem(BlockRegistry.ICE_CRYSTALS, new Item.Settings()));
 
