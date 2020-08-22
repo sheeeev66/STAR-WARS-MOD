@@ -2,6 +2,7 @@ package net.star.wars.materials.tools.lightsaber;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,9 +38,14 @@ public class AbstractLightsaberItem extends SwordItem {
 
 
     @Override
+    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
+
+        return 14f;
+    }
+
+    @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         attacker.playSound(SoundRegistry.LIGHTSABER_HIT_ONE, 1f, 1f);
-        //warning, sound not registered or located yet so it wont work
         return true;
     }
 

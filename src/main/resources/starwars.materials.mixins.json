@@ -3,10 +3,10 @@
   "package": "net.star.wars.materials.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BlockMixin",
     "EntityInject"
   ],
   "client": [
-    
   ],
   "injectors": {
     "defaultRequire": 1

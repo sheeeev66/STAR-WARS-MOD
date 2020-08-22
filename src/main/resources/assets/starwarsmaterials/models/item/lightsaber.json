@@ -1,1 +1,240 @@
-{"credit":"Made with Blockbench","parent":"item/generated","textures":{"layer0":"starwarsmaterials:item/lightsaber"}}
+{
+  "credit": "Made with Blockbench",
+  "texture_size": [
+    32,
+    32
+  ],
+  "textures": {
+    "0": "starwarsmaterials:item/lightsaber",
+    "particle": "starwarsmaterials:item/lightsaber"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        9,
+        7,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          16,
+          8,
+          15
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            4,
+            6,
+            7.5
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            4,
+            0,
+            6,
+            3.5
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            6,
+            6,
+            8,
+            9.5
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            6,
+            0,
+            8,
+            3.5
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            8,
+            3.5,
+            6,
+            5.5
+          ],
+          "texture": "#0"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        7,
+        6
+      ],
+      "to": [
+        8,
+        32,
+        8
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          15,
+          15,
+          14
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            1,
+            12.5
+          ],
+          "texture": "#0"
+        },
+        "east": {
+          "uv": [
+            1,
+            1,
+            2,
+            13.5
+          ],
+          "texture": "#0"
+        },
+        "south": {
+          "uv": [
+            2,
+            2,
+            3,
+            14.5
+          ],
+          "texture": "#0"
+        },
+        "west": {
+          "uv": [
+            3,
+            3,
+            4,
+            15.5
+          ],
+          "texture": "#0"
+        },
+        "up": {
+          "uv": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "texture": "#0"
+        },
+        "down": {
+          "uv": [
+            4,
+            2,
+            3,
+            3
+          ],
+          "texture": "#0"
+        }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "translation": [
+        0,
+        3.25,
+        1.75
+      ]
+    },
+    "thirdperson_lefthand": {
+      "translation": [
+        -1,
+        2.5,
+        4
+      ]
+    },
+    "firstperson_righthand": {
+      "translation": [
+        0,
+        0.5,
+        0
+      ]
+    },
+    "firstperson_lefthand": {
+      "translation": [
+        0,
+        1,
+        0
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        1.75,
+        0.75
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -1.5,
+        29,
+        -41
+      ],
+      "translation": [
+        -1.5,
+        -3.25,
+        0
+      ],
+      "scale": [
+        1,
+        0.60742,
+        1
+      ]
+    },
+    "head": {
+      "translation": [
+        0,
+        -0.75,
+        0
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -5.25,
+        0
+      ],
+      "scale": [
+        1,
+        0.56445,
+        1
+      ]
+    }
+  }
+}

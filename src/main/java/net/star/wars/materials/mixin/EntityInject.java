@@ -7,10 +7,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -37,23 +37,23 @@ public abstract class EntityInject {
       //  System.out.println(playerEntity);
         if (playerEntity != null) {
             ItemStack stack = playerEntity.getStackInHand(Hand.MAIN_HAND);
-            System.out.println(stack);
+          //  System.out.println(stack);
             if (stack.getItem() instanceof AbstractLightsaberItem){
-                System.out.println("played Sound");
-                playerEntity.playSound(SoundEvents.BLOCK_ANVIL_LAND, 1f, 1f);
+          //      System.out.println("played Sound");
+                playerEntity.playSound(SoundRegistry.LIGHTSABER_MOVE_ONE, 0.3f, 0.3f);
             }
         }
     }
     @Inject(method = "playSwimSound", at = @At("TAIL"))
     private final void playSwimSound(float volume, CallbackInfo ci){
         PlayerEntity playerEntity = this.world.getClosestPlayer(getX(), getY(), getZ(), 3, true);
-        System.out.println(playerEntity);
+    //    System.out.println(playerEntity);
         if (playerEntity != null) {
             ItemStack stack = playerEntity.getStackInHand(Hand.MAIN_HAND);
-            System.out.println(stack);
+      //      System.out.println(stack);
             if (stack.getItem() instanceof AbstractLightsaberItem){
-                System.out.println("played Sound");
-                playerEntity.playSound(SoundEvents.BLOCK_ANVIL_LAND, 1f, 1f);
+        //        System.out.println("played Sound");
+                playerEntity.playSound(SoundRegistry.LIGHTSABER_MOVE_TWO, 0.3f, 0.3f);
             }
         }
     }

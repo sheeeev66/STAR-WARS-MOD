@@ -1,13 +1,7 @@
 package net.star.wars.materials.block;
 
-import java.util.Random;
-
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -27,12 +21,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.LightType;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.world.*;
 
+import java.util.Random;
+@SuppressWarnings("deprecation")
 public class IceCrystals extends Block {
 
 	public IceCrystals() {
@@ -83,12 +75,14 @@ public class IceCrystals extends Block {
     }
 
 
+    @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
-        return context.getStack().getItem() == this.asItem() && (Integer)state.get(PICKLES) < 4 ? true : super.canReplace(state, context);
+        return context.getStack().getItem() == this.asItem() && state.get(PICKLES) < 4 || super.canReplace(state, context);
      }
   
+     @Override
      public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch((Integer)state.get(PICKLES)) {
+        switch(state.get(PICKLES)) {
         case 1:
         default:
         return state.get(HANGING) ? ONE_HANGING_SHAPE : ONE_STANDING_SHAPE;
@@ -101,10 +95,12 @@ public class IceCrystals extends Block {
         }
      }
   
+    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(HANGING, PICKLES, field_26441);
     }
   
+    @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         Direction direction = attachedDirection(state).getOpposite();
         return Block.sideCoversSmallSquare(world, pos.offset(direction), direction.getOpposite());
@@ -114,6 +110,7 @@ public class IceCrystals extends Block {
         return (Boolean)state.get(HANGING) ? Direction.DOWN : Direction.UP;
     }
   
+     @Override
      public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if ((Boolean)state.get(field_26441)) {
            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
@@ -141,7 +138,6 @@ public class IceCrystals extends Block {
         if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
            if (world.getDimension().isUltrawarm()) {
               world.removeBlock(pos, false);
-              return;
            }
         }
   
