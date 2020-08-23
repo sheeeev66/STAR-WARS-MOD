@@ -66,8 +66,7 @@ public class AbstractLightsaberItem extends SwordItem {
         tag.putBoolean("on", lightsaberOn);
         if (!world.isClient) {
            int slot =  player.inventory.getSlotWithStack(player.getStackInHand(hand));
-            player.inventory.removeStack(slot); 
-            player.inventory.insertStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_HANDLE)); 
+           player.inventory.setStack(slot, new ItemStack(ItemRegistry.LIGHTSABER_BLUE));
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
         }
