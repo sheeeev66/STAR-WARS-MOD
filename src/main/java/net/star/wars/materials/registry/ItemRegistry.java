@@ -42,7 +42,7 @@ public class ItemRegistry {
 
 
     public static final LightsaberHilt LIGHTSABER_HANDLE = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
-    public static final Item LightSaber_Hilt = new Item(new Item.Settings().group(GroupRegistry.Weapons_Group));
+
     //testing toolMaterials
     
     public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
@@ -79,10 +79,6 @@ public class ItemRegistry {
         // items
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_handle"), LIGHTSABER_HANDLE);
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LightSaber_Hilt); 
-
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
-
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LIGHTSABER_HILT);
 
