@@ -8,9 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.fabricmc.fabric.mixin.object.builder.ModelPredicateProviderRegistrySpecificAccessor;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
-import net.star.wars.materials.LightsaberTest;
 import net.star.wars.materials.registry.ItemRegistry;
-import net.star.wars.materials.LightsaberTest.;
 
 @Mixin(ModelPredicateProviderRegistry.class)
 public abstract class ModelPredicateProviderRegistryMixin {
