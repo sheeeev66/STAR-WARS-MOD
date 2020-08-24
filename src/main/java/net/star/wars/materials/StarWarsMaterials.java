@@ -1,13 +1,14 @@
 package net.star.wars.materials;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.fabricmc.api.ModInitializer;
 import net.star.wars.materials.registry.BlockRegistry;
 import net.star.wars.materials.registry.EntityRegistry;
 import net.star.wars.materials.registry.ItemRegistry;
 import net.star.wars.materials.registry.SoundRegistry;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 
 public class StarWarsMaterials implements ModInitializer
@@ -24,6 +25,8 @@ public class StarWarsMaterials implements ModInitializer
         EntityRegistry.initialize();
         ItemRegistry.initialize();
         SoundRegistry.initialize();
+
+        
     }
     
 }

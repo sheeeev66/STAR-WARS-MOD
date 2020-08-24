@@ -1,15 +1,28 @@
 package net.star.wars.materials.registry;
 
+import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
+
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+import net.star.wars.materials.LightsaberTest;
 import net.star.wars.materials.armor.BaseArmor;
-import net.star.wars.materials.item.*;
+import net.star.wars.materials.item.BeskarIngot;
+import net.star.wars.materials.item.CookedPorg;
+import net.star.wars.materials.item.DeathSticks;
+import net.star.wars.materials.item.KyberCrystal;
+import net.star.wars.materials.item.LightsaberHilt;
+import net.star.wars.materials.item.Plastoid;
+import net.star.wars.materials.item.RawPorg;
 import net.star.wars.materials.item.KyberCrystalsColors.BlueKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.GreenKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.PurpleKyberCrystal;
@@ -17,7 +30,6 @@ import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
 import net.star.wars.materials.tools.lightsaber.LightsaberBlue;
 import net.star.wars.materials.tools.lightsaber.LightsaberToolMaterial;
 
-import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
 
 public class ItemRegistry {
     public static final BeskarIngot BESKAR_INGOT = new BeskarIngot(new Item.Settings());
@@ -39,18 +51,21 @@ public class ItemRegistry {
             .food(new FoodComponent.Builder().alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA), 20*60*2).build()));
 
     // Lightsabers
+    public static final LightsaberTest LIGHTSABER_TEST =  new LightsaberTest(new Item.Settings().rarity(Rarity.EPIC).maxCount(1).group(GroupRegistry.ARMOR_GROUP));
 
 
-    public static final LightsaberHilt LIGHTSABER_HANDLE = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
+
+
+    public static final LightsaberHilt LIGHTSABER_HANDLE = new LightsaberHilt(new Item.Settings().maxCount(1));
 
     //testing toolMaterials
     
     public static final AbstractLightsaberItem LIGHTSABER_ITEM = new AbstractLightsaberItem(new Item.Settings().rarity(Rarity.EPIC).maxCount(1), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
 
-    public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings().group(GroupRegistry.Weapons_Group), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
+    public static final LightsaberBlue LIGHTSABER_BLUE = new LightsaberBlue(new Item.Settings(), new LightsaberToolMaterial(900, 6f, 14, 3, 14, Ingredient.ofItems(BLUE_KYBER_CRYSTAL)));
 
 
-    public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().group(GroupRegistry.Weapons_Group).maxCount(1));
+    public static final LightsaberHilt LIGHTSABER_HILT = new LightsaberHilt(new Item.Settings().maxCount(1));
 
 
     public static void initialize(){
@@ -77,6 +92,10 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "death_sticks"), DEATH_STICKS);
 
         // items
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_test"), LIGHTSABER_TEST);
+
+
+
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_handle"), LIGHTSABER_HANDLE);
 
@@ -94,5 +113,7 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mandalorian_chestplate"), new BaseArmor(ArmorRegistry.MANDALORIAN_ARMOR, EquipmentSlot.CHEST));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mandalorian_leggings"), new BaseArmor(ArmorRegistry.MANDALORIAN_ARMOR, EquipmentSlot.LEGS));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "mandalorian_boots"), new BaseArmor(ArmorRegistry.MANDALORIAN_ARMOR, EquipmentSlot.FEET));
+
+        //////////////////// predicates ////////////////////
     }
 }
