@@ -24,7 +24,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 
 import java.util.Random;
-@SuppressWarnings("deprecation")
+
 public class IceCrystals extends Block {
 
 	public IceCrystals() {
