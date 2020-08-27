@@ -1,10 +1,6 @@
 package net.star.wars.materials.registry;
 
-import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
-import net.minecraft.client.item.ModelPredicateProvider;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -90,12 +86,6 @@ public class ItemRegistry {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_blue"), LIGHTSABER_BLUE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beskar_ore"), new BlockItem(BlockRegistry.BESKAR_ORE, new Item.Settings()));
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ice_crystal"), new BlockItem(BlockRegistry.ICE_CRYSTALS, new Item.Settings()));
-        FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_ITEM, new Identifier(MOD_ID, "test"), new ModelPredicateProvider() {
-            @Override
-            public float call(ItemStack stack, ClientWorld world, LivingEntity entity) {
-                return 0;
-            }
-        });
 
         //////////////////// armor ////////////////////
         // mandalorian armor

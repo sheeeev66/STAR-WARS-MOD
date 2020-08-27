@@ -15,12 +15,13 @@ public class StarWarsMaterials implements ModInitializer
     @Override
     public void onInitialize()
     {
-        LOGGER.info("Initialized Star Wars Mod!");
+        LOGGER.info("[Star Wars Mod] Initialized Star Wars Mod!");
         BlockRegistry.initalize();
         EntityRegistry.initialize();
         ItemRegistry.initialize();
         SoundRegistry.initialize();
         EventRegistry.initialize();
+        APIRegistries.initialize();
     }
     
 }

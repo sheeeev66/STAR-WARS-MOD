@@ -19,6 +19,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+
+
 @Mixin(Block.class)
 public abstract class BlockMixin extends AbstractBlock implements ItemConvertible {
 
@@ -29,7 +32,7 @@ public abstract class BlockMixin extends AbstractBlock implements ItemConvertibl
         super(settings);
     }
 
-
+    @SuppressWarnings("UnresolvedMixinReference")
     @ModifyArg(method = "method_9544(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;dropStack(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V"), index = 2)
     private static ItemStack dropStacker(ItemStack stack){
         if(LightSaberUtil.isBreakingWithLightsaber()){

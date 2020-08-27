@@ -1,5 +1,7 @@
 package net.star.wars.materials;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -20,7 +22,7 @@ public class LightsaberTest extends Item {
     }
 
     boolean lightsaberOn;
-
+    @Environment(EnvType.CLIENT)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         /////// nbt
         // on/off
