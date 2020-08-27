@@ -1,0 +1,23 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "starwarsmaterials:item/lightsaber_hilt"
+    },
+
+    "overrides": [
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 1,
+                "starwarsmaterials:lightsaber_animation": 0.1
+            },
+            "model": "item/diamond_sword"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 1,
+                "starwarsmaterials:lightsaber_animation": 0.2
+            },
+            "model": "item/diamond_axe"
+        }
+    ]
+}

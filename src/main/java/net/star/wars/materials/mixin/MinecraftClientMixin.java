@@ -1,7 +1,6 @@
 package net.star.wars.materials.mixin;
 
 
-import jdk.internal.jline.internal.Nullable;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -27,11 +26,11 @@ public abstract class MinecraftClientMixin extends ReentrantThreadExecutor<Runna
     private SoundEvent event;
         private SoundEvent event2;
 
-    @Shadow @Nullable
+    @Shadow 
     public ClientPlayerEntity player;
 
 
-    @Shadow @Nullable public HitResult crosshairTarget;
+    @Shadow  public HitResult crosshairTarget;
 
     public MinecraftClientMixin(String string) {
         super(string);

@@ -21,6 +21,7 @@ public class StarWarsMaterials implements ModInitializer
         ItemRegistry.initialize();
         SoundRegistry.initialize();
         EventRegistry.initialize();
+        ModelPredicatesRegistry.initialize();
     }
     
 }

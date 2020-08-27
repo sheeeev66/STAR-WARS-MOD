@@ -13,8 +13,8 @@ import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
 public class LightSaberHum extends MovingSoundInstance {
     private final PlayerEntity player;
     // please help me! How do I call this class in @link LightsaberItem?
-    //call MinecraftClient.getInstance().getSoundManager().play(); and make a constructor and pass a playerentity and a soundcategory
-    //also we are calling this sound in lightsaberhilt, not lightsaber item
+    //call MinecraftClient.getInstance().getSoundManager().play(); MinecraftClient.getInstance().getMusicTracker().stop(); and make a constructor and pass a playerentity and a soundcategory
+    //also we are calling this sound in @link LightsaberHilt, not lightsaber item
 
 
     public LightSaberHum(PlayerEntity playerIn, SoundCategory soundCategory) {
