@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Random;
 
 public class AbstractLightsaberItem extends SwordItem {
-    private SoundEvent randomhit;
-    private SoundEvent randomMove;
+    public SoundEvent randomhit;
+    public SoundEvent randomMove;
     public AbstractLightsaberItem(Settings settings, ToolMaterial material) {
         super(material, 14, 9, settings);
     }
