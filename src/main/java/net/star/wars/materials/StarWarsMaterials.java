@@ -15,7 +15,7 @@ public class StarWarsMaterials implements ModInitializer
     @Override
     public void onInitialize()
     {
-        LOGGER.info("Initialized Star Wars Mod!");
+        LOGGER.info("[Star Wars] Initialized Star Wars Mod!");
         BlockRegistry.initalize();
         EntityRegistry.initialize();
         ItemRegistry.initialize();
