@@ -1,5 +1,7 @@
 package net.star.wars.materials;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -39,7 +41,7 @@ public class LightsaberTest extends Item {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putFloat("blade_timer", bladeTimer);
     }
-
+    @Environment(EnvType.CLIENT)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         boolean lightsaberOn = isOn(stack);

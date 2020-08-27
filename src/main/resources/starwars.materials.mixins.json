@@ -7,8 +7,7 @@
     "PlayerEntityMixin"
   ],
   "client": [
-    "MinecraftClientMixin",
-    "ModelPredicateProviderRegistryMixin"
+    "MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
