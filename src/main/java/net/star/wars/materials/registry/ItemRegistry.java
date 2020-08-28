@@ -15,8 +15,8 @@ import net.star.wars.materials.item.KyberCrystalsColors.BlueKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.GreenKyberCrystal;
 import net.star.wars.materials.item.KyberCrystalsColors.PurpleKyberCrystal;
 import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
-import net.star.wars.materials.tools.lightsaber.LightsaberBlue;
 import net.star.wars.materials.tools.lightsaber.LightsaberToolMaterial;
+import net.star.wars.materials.tools.lightsaber.lightsabers.LightsaberBlue;
 
 import static net.star.wars.materials.StarWarsMaterials.MOD_ID;
 

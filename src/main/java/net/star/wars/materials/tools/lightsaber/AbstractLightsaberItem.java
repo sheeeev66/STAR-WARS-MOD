@@ -93,5 +93,8 @@ public class AbstractLightsaberItem extends SwordItem {
         }
             return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
         }
+    public int getLightsaberIndex(){
+        return 0;
+    }
     }
 

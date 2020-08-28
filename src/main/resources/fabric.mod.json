@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "starwarsmaterials",
-  "version": "${version}",
+  "version": "0.1.6",
 
   "name": "Star Wars Mod",
-  "description": "The ultimate star wars mod! adding everything we can think of from star wars to minecraft while keeping the \"minecraft\" intact and every thing star wars cannon!",
+  "description": "The ultimate star wars mod! adding everything we can think of from star wars to minecraft while keeping the \"minecraft\" intact and every thing star wars \"cannon!\"",
   "authors": [
     "Sheeeev66 - Project leader, Main Developer, Main Textureror, Main Modeler",
     "Nuclear - Developer",

@@ -17,6 +17,9 @@ dependencies {
             
     //Fabric api
     modImplementation "net.fabricmc.fabric-api:fabric-api:0.18.0+build.397-1.16"
+
+	modImplementation "io.github.ladysnake:Satin:${satin_version}"
+	include "io.github.ladysnake:Satin:${satin_version}"
 }
 
 processResources {

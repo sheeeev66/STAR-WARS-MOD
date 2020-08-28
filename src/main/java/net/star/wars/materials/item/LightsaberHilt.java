@@ -24,7 +24,7 @@ public class LightsaberHilt extends Item {
     @Environment(EnvType.CLIENT) 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        if (player.getStackInHand(hand).getItem() == ItemRegistry.LIGHTSABER_HANDLE) {
+        if (player.getStackInHand(hand).getItem().equals(ItemRegistry.LIGHTSABER_HANDLE)) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
             player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_ITEM));
             player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
@@ -35,6 +35,6 @@ public class LightsaberHilt extends Item {
         }
 
 
-        return new TypedActionResult<ItemStack>(ActionResult.SUCCESS, player.getStackInHand(hand));
+        return new TypedActionResult<>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
 }
