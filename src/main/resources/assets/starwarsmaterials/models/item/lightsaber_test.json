@@ -1,7 +1,7 @@
 {
-    "parent": "item/generated",
+    "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0": "starwarsmaterials:item/lightsaber_hilt"
+        "layer0": "starwarsmaterials:item/lightsaber_0"
     },
 
     "overrides": [
@@ -10,14 +10,29 @@
                 "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation": 0.1
             },
-            "model": "item/diamond_sword"
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_1"
         },
         {
             "predicate": {
                 "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation": 0.2
             },
-            "model": "item/diamond_axe"
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_2"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 1,
+                "starwarsmaterials:lightsaber_animation": 0.3
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_3"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 1,
+                "starwarsmaterials:lightsaber_animation": 0.4
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_4"
         }
+
     ]
 }
