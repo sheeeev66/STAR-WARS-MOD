@@ -2,8 +2,9 @@ package net.star.wars.materials;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -59,52 +60,75 @@ public class LightsaberTest extends Item {
             client.getMusicTracker().stop();
         }
 
-        /*
-        if (isOn(stack) == true) {
-            while (bladeTimer < 0.2f) {
-                bladeTimer += 0.1f;
-                setBladeTimer(stack, bladeTimer);
-            }
-        } else {
-            while (bladeTimer > 0) {
-                bladeTimer -= 0.1f;
-                setBladeTimer(stack, bladeTimer);
-            }
-        }
-        */
-        
-
-        if (bladeTimer == 0.0f) {
-            System.out.println("0");
-        }
-
-        if (bladeTimer == 0.1f) {
-            System.out.println("1");
-        }
-
-        if (bladeTimer == 0.2f) {
-            System.out.println("2");
-        }
-
-
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS ,player.getStackInHand(hand));
     }
 
+    @Override
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+        boolean lightsaberOn = isOn(stack);
+        float bladeTimer = getBladeTimer(stack);
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (lightsaberOn) {
+                while (bladeTimer < 0.4f) {
+                    bladeTimer += 0.1f;
+                    setBladeTimer(stack, bladeTimer);
+                }
+            } else {
+                while (bladeTimer > 0) {
+                    bladeTimer -= 0.1f;
+                    setBladeTimer(stack, bladeTimer);
+                }
+            }
+        });
+    }
+    
+/*
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         float bladeTimer = getBladeTimer(stack);
 
         if (isOn(stack) == true) {
-            if (bladeTimer < 0.2f) {
+            if (bladeTimer < 0.4f) {
                 bladeTimer += 0.1f;
                 setBladeTimer(stack, bladeTimer);
+                
+                if (bladeTimer < 0.4f) {
+                    bladeTimer += 0.1f;
+                    setBladeTimer(stack, bladeTimer);
+
+                    if (bladeTimer < 0.4f) {
+                        bladeTimer += 0.1f;
+                        setBladeTimer(stack, bladeTimer);
+
+                        if (bladeTimer < 0.4f) {
+                            bladeTimer += 0.1f;
+                            setBladeTimer(stack, bladeTimer);
+                        }
+                    }
+                }
             }
         } else {
             if (bladeTimer > 0) {
                 bladeTimer -= 0.1f;
                 setBladeTimer(stack, bladeTimer);
+                
+                if (bladeTimer > 0) {
+                    bladeTimer -= 0.1f;
+                    setBladeTimer(stack, bladeTimer);
+
+                    if (bladeTimer > 0) {
+                        bladeTimer -= 0.1f;
+                        setBladeTimer(stack, bladeTimer);
+
+                        if (bladeTimer > 0) {
+                            bladeTimer -= 0.1f;
+                            setBladeTimer(stack, bladeTimer);
+                        }
+                    }
+                }
             }
         }
         
-    }
+    }*/    
 }
