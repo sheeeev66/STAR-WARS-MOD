@@ -14,8 +14,11 @@ import net.minecraft.world.World;
 import net.star.wars.materials.registry.ItemRegistry;
 import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.sounds.LightSaberHum;
+import net.star.wars.materials.tools.lightsaber.AbstractLightsaberItem;
+import net.star.wars.materials.util.LightSaberUtil;
 
 public class LightsaberHilt extends Item {
+    private AbstractLightsaberItem item;
 
     public LightsaberHilt(Settings settings) {
         super(settings);
@@ -24,17 +27,23 @@ public class LightsaberHilt extends Item {
     @Environment(EnvType.CLIENT) 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
-        if (player.getStackInHand(hand).getItem().equals(ItemRegistry.LIGHTSABER_HANDLE)) {
+        if (hand == Hand.MAIN_HAND) {
             player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
-            player.inventory.insertStack(new ItemStack(ItemRegistry.LIGHTSABER_ITEM));
+            switch (LightSaberUtil.getLightsaberIndex()){
+                case 0:
+                    item = ItemRegistry.LIGHTSABER_ITEM;
+                    break;
+                case 1:
+                    item = ItemRegistry.LIGHTSABER_BLUE;
+                    break;
+            }
+            player.inventory.insertStack(new ItemStack(item));
             player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
-            if(world.isClient) {
+            if (world.isClient) {
                 MinecraftClient.getInstance().getSoundManager().play(new LightSaberHum(player, SoundCategory.AMBIENT));
                 MinecraftClient.getInstance().getMusicTracker().stop();
             }
         }
-
-
         return new TypedActionResult<>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
 }

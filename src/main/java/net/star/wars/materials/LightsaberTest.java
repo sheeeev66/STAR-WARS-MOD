@@ -87,14 +87,14 @@ public class LightsaberTest extends Item {
         }
 
 
-        return new TypedActionResult<ItemStack>(ActionResult.SUCCESS ,player.getStackInHand(hand));
+        return new TypedActionResult<>(ActionResult.SUCCESS, player.getStackInHand(hand));
     }
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         float bladeTimer = getBladeTimer(stack);
 
-        if (isOn(stack) == true) {
+        if (isOn(stack)) {
             if (bladeTimer < 0.2f) {
                 bladeTimer += 0.1f;
                 setBladeTimer(stack, bladeTimer);

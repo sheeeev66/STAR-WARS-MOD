@@ -68,28 +68,28 @@
     "lightsaber_hit_1": {
         "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_1",
         "sounds": [
-            "starwarsmaterials:lightsaber_hit"
+            "starwarsmaterials:lightsaber_hit_1"
         ]
     },
 
     "lightsaber_hit_2": {
         "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_2",
         "sounds": [
-            "starwarsmaterials:lightsaber_hit"
+            "starwarsmaterials:lightsaber_hit_2"
         ]
     },
 
     "lightsaber_hit_3": {
         "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_3",
         "sounds": [
-            "starwarsmaterials:lightsaber_hit"
+            "starwarsmaterials:lightsaber_hit_3"
         ]
     },
 
     "lightsaber_hit_4": {
         "subtitle": "Subtitles.starwarsmaterials.lightsaber_hit_4",
         "sounds": [
-            "starwarsmaterials:lightsaber_hit"
+            "starwarsmaterials:lightsaber_hit_4"
         ]
     }
   }

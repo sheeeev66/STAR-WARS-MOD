@@ -42,38 +42,53 @@ public abstract class MinecraftClientMixin extends ReentrantThreadExecutor<Runna
     @Inject(method = "doAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;swingHand(Lnet/minecraft/util/Hand;)V"))
     private void mixin2(CallbackInfo ci){
         if (this.player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof AbstractLightsaberItem ) {
-
             if (this.crosshairTarget.getType().equals(HitResult.Type.MISS)) {
                 Random random = new Random();
                 int rand = random.nextInt(4);
+                System.out.println("miss rand = " + rand);
                 switch (rand) {
                     case 1:
                         event2 = SoundRegistry.LIGHTSABER_MOVE_TWO;
+                        System.out.println("move 2");
+                        break;
                     case 2:
                         event2 = SoundRegistry.LIGHTSABER_MOVE_THREE;
+                        System.out.println("move 3");
+                        break;
                     case 3:
                         event2 = SoundRegistry.LIGHTSABER_MOVE_FOUR;
+                        System.out.println("move 4");
+                        break;
                     default:
                         event2 = SoundRegistry.LIGHTSABER_MOVE_ONE;
+                        System.out.println("move 1 - default");
+                        break;
                 }
                 this.player.playSound(event2, 0.7f, 0.7f);
-                System.out.println(event2);
             }
             if (this.crosshairTarget.getType().equals(HitResult.Type.BLOCK) || this.crosshairTarget.getType().equals(HitResult.Type.ENTITY)){
                 Random random = new Random();
                 int rand = random.nextInt(4);
+                System.out.println("block rand = " + rand);
                 switch (rand) {
                     case 1:
-                        event = SoundRegistry.LIGHTSABER_MOVE_TWO;
+                        event = SoundRegistry.LIGHTSABER_HIT_TWO;
+                        System.out.println("hit 2");
+                        break;
                     case 2:
-                        event = SoundRegistry.LIGHTSABER_MOVE_THREE;
+                        event = SoundRegistry.LIGHTSABER_HIT_THREE;
+                        System.out.println("hit 3");
+                        break;
                     case 3:
-                        event = SoundRegistry.LIGHTSABER_MOVE_FOUR;
+                        event = SoundRegistry.LIGHTSABER_HIT_FOUR;
+                        System.out.println("hit 4");
+                        break;
                     default:
-                        event = SoundRegistry.LIGHTSABER_MOVE_ONE;
+                        event = SoundRegistry.LIGHTSABER_HIT_ONE;
+                        System.out.println("hit one - default");
+                        break;
                 }
                 this.player.playSound(event, 0.7f, 0.7f);
-                System.out.println(event);
             }
         }
     }
