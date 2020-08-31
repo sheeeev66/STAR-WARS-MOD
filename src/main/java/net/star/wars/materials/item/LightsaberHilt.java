@@ -28,7 +28,8 @@ public class LightsaberHilt extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         if (hand == Hand.MAIN_HAND) {
-            player.inventory.removeStack(player.inventory.getSlotWithStack(player.getStackInHand(hand)));
+            int slot = player.inventory.selectedSlot;
+            player.inventory.removeStack(slot);
             switch (LightSaberUtil.getLightsaberIndex()){
                 case 0:
                     item = ItemRegistry.LIGHTSABER_ITEM;
@@ -37,7 +38,7 @@ public class LightsaberHilt extends Item {
                     item = ItemRegistry.LIGHTSABER_BLUE;
                     break;
             }
-            player.inventory.insertStack(new ItemStack(item));
+            player.inventory.insertStack(slot, new ItemStack(item));
             player.playSound(SoundRegistry.LIGHTSABER_ON, 3.0f, 1.0f);
             if (world.isClient) {
                 MinecraftClient.getInstance().getSoundManager().play(new LightSaberHum(player, SoundCategory.AMBIENT));
