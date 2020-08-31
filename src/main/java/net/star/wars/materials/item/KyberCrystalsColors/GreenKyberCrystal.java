@@ -6,6 +6,7 @@ public class GreenKyberCrystal extends Item {
 
     public GreenKyberCrystal(Settings settings) {
         super(settings);
+
     }
     
 }

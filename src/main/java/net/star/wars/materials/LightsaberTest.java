@@ -66,18 +66,18 @@ public class LightsaberTest extends Item {
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         boolean lightsaberOn = isOn(stack);
-        float bladeTimer = getBladeTimer(stack);
+       float[] bladeTimer = {getBladeTimer(stack)};
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (lightsaberOn) {
-                while (bladeTimer < 0.4f) {
-                    bladeTimer += 0.1f;
-                    setBladeTimer(stack, bladeTimer);
+                while (bladeTimer[0] < 0.4f) {
+                    bladeTimer[0] += 0.1f;
+                    setBladeTimer(stack, bladeTimer[0]);
                 }
             } else {
-                while (bladeTimer > 0) {
-                    bladeTimer -= 0.1f;
-                    setBladeTimer(stack, bladeTimer);
+                while (bladeTimer[0] > 0) {
+                    bladeTimer[0] -= 0.1f;
+                    setBladeTimer(stack, bladeTimer[0]);
                 }
             }
         });
