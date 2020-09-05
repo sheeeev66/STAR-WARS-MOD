@@ -86,8 +86,6 @@ public class ItemRegistry {
 
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_hilt"), LightSaber_Hilt);
 
-// webhook test 
-
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber"), LIGHTSABER_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "lightsaber_blue"), LIGHTSABER_BLUE);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "beskar_ore"), new BlockItem(BlockRegistry.BESKAR_ORE, new Item.Settings()));
