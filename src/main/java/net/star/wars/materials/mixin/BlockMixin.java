@@ -49,6 +49,9 @@ public abstract class BlockMixin extends AbstractBlock implements ItemConvertibl
           if (entity1.getStackInHand(Hand.MAIN_HAND).getItem() instanceof AbstractLightsaberItem){
               LightSaberUtil.setBreakingWithLightSaber(true);
           }
+            else{
+                LightSaberUtil.setBreakingWithLightSaber(false);
+            }
         }
     }
 
