@@ -32,7 +32,7 @@ public class LightsaberTest extends Item {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putBoolean("lightsaber_on", isOn);
     }
-
+/*
     public static float getBladeTimer(ItemStack stack) {
         CompoundTag tag = stack.getOrCreateTag();
         return tag.getFloat("blade_timer");
@@ -42,11 +42,11 @@ public class LightsaberTest extends Item {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putFloat("blade_timer", bladeTimer);
     }
+    */
     @Environment(EnvType.CLIENT)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         boolean lightsaberOn = isOn(stack);
-        float bladeTimer = getBladeTimer(stack);
 
         setOn(stack, !lightsaberOn);
 
@@ -62,7 +62,7 @@ public class LightsaberTest extends Item {
 
         return new TypedActionResult<ItemStack>(ActionResult.SUCCESS ,player.getStackInHand(hand));
     }
-
+/*
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         boolean lightsaberOn = isOn(stack);
@@ -71,17 +71,17 @@ public class LightsaberTest extends Item {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (lightsaberOn) {
                 while (bladeTimer < 0.4f) {
-                    blade_timer += 0.1f;
+                    this.setBladeTimer(stack, bladeTimer + 0.1f);
                     setBladeTimer(stack, bladeTimer);
                 }
             } else {
                 while (bladeTimer > 0) {
-                    blade_timer -= 0.1f;
+                    this.setBladeTimer(stack, bladeTimer - 0.1f);
                     setBladeTimer(stack, bladeTimer);
                 }
             }
         });
-    }
+    }*/
     
 /*
     @Override
