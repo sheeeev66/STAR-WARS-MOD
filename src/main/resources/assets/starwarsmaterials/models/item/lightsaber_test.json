@@ -8,31 +8,60 @@
         {
             "predicate": {
                 "starwarsmaterials:lightsaber_on": 1,
-                "starwarsmaterials:lightsaber_animation": 0.1
+                "starwarsmaterials:lightsaber_animation_on": 0.25
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_1"
         },
         {
             "predicate": {
                 "starwarsmaterials:lightsaber_on": 1,
-                "starwarsmaterials:lightsaber_animation": 0.2
+                "starwarsmaterials:lightsaber_animation_on": 0.50
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_2"
         },
         {
             "predicate": {
                 "starwarsmaterials:lightsaber_on": 1,
-                "starwarsmaterials:lightsaber_animation": 0.3
+                "starwarsmaterials:lightsaber_animation_on": 0.75
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_3"
         },
         {
             "predicate": {
                 "starwarsmaterials:lightsaber_on": 1,
-                "starwarsmaterials:lightsaber_animation": 0.4
+                "starwarsmaterials:lightsaber_animation_on": 1.0
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_4"
+        },
+
+
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 0,
+                "starwarsmaterials:lightsaber_animation_on": 0.4
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_1"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 0,
+                "starwarsmaterials:lightsaber_animation_on": 0.3
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_2"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 0,
+                "starwarsmaterials:lightsaber_animation_on": 0.2
+            },
+            "model": "starwarsmaterials:item/lightsaber_models/lightsaber_3"
+        },
+        {
+            "predicate": {
+                "starwarsmaterials:lightsaber_on": 0,
+                "starwarsmaterials:lightsaber_animation_on": 0.1
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_4"
         }
-
     ]
 }

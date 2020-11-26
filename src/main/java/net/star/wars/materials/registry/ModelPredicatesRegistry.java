@@ -22,28 +22,43 @@ public class ModelPredicatesRegistry {
 			}
             
         });
-        FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_TEST, new Identifier(MOD_ID, "lightsaber_animation"), new ModelPredicateProvider() {
-            float timer = 0.0f;
+
+        FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_TEST, new Identifier(MOD_ID, "lightsaber_animation_on"), new ModelPredicateProvider() {
+            @Override
+            public float call(ItemStack stack, ClientWorld world, LivingEntity entity) {
+                float turnOn = 20.0F;
+                return turnOn <= 20.0F ? turnOn >= 2 ? 2 : (turnOn - 1.0F) / 20.0F : (turnOn - 1.0F) / 20.0F;
+            }
+        });
+
+        /* FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_TEST, new Identifier(MOD_ID, "lightsaber_animation_off"), new ModelPredicateProvider() {
 
             @Override
             public float call(ItemStack stack, ClientWorld world, LivingEntity entity) {
-                if (LightsaberTest.isOn(stack) == true) {
-                    if (timer < 0.4f) {
-                        timer += 0.1f;
-                    }
+                if (LightsaberTest.bladeTimer(stack) >= 0.4F) {
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack) - 0.01F);
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack));
                 }
-
-                if (LightsaberTest.isOn(stack) == false) {
-                    if (timer > 0.0f) {
-                        timer -= 0.1f;
-                    }
+                if (LightsaberTest.bladeTimer(stack) >= 0.3F) {
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack) - 0.01F);
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack));
                 }
-                System.out.println(LightsaberTest.isOn(stack));
-                System.out.println(timer);
-                return timer;
-
+                if (LightsaberTest.bladeTimer(stack) >= 0.2F) {
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack) - 0.01F);
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack));
+                }
+                if (LightsaberTest.bladeTimer(stack) >= 0.1F) {
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack) - 0.01F);
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack));
+                }
+                if (LightsaberTest.bladeTimer(stack) != 0) {
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack) * 0);
+                    LightsaberTest.setBladeTimer(stack, LightsaberTest.getBladeTimer(stack));
+                }
+                System.out.println(LightsaberTest.bladeTimer(stack));
+                return LightsaberTest.bladeTimer(stack);
             }
-        });
+        }); */
     }
 
 }

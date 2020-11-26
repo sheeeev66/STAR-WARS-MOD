@@ -2,9 +2,7 @@ package net.star.wars.materials;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,7 +16,7 @@ import net.star.wars.materials.registry.SoundRegistry;
 import net.star.wars.materials.sounds.LightSaberHum;
 
 public class LightsaberTest extends Item {
-
+    
     public LightsaberTest(Settings settings) {
         super(settings);
     }
@@ -32,7 +30,7 @@ public class LightsaberTest extends Item {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putBoolean("lightsaber_on", isOn);
     }
-/*
+
     public static float getBladeTimer(ItemStack stack) {
         CompoundTag tag = stack.getOrCreateTag();
         return tag.getFloat("blade_timer");
@@ -42,13 +40,20 @@ public class LightsaberTest extends Item {
         CompoundTag tag = stack.getOrCreateTag();
         tag.putFloat("blade_timer", bladeTimer);
     }
-    */
+
+    public static float bladeTimer(ItemStack stack) {
+        return getBladeTimer(stack);
+    }
+    
     @Environment(EnvType.CLIENT)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         boolean lightsaberOn = isOn(stack);
 
+        // toggle
+        System.out.println(lightsaberOn);
         setOn(stack, !lightsaberOn);
+         System.out.println(lightsaberOn);
 
         // play sound on/off
         player.playSound(lightsaberOn ? SoundRegistry.LIGHTSABER_ON : SoundRegistry.LIGHTSABER_OFF, 1.0f, 1.0f);
