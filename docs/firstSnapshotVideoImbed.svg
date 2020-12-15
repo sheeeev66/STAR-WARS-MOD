@@ -1,6 +1,6 @@
 <foreignObject width="560" height="315">
-  <iframe xmlns="http://www.w3.org/1999/xhtml"
-    width="560" height="315"
-    src="http://www.youtube.com/embed/K_U8KsA6OZc"
-    frameborder="0"></iframe>
+  <iframe width="560" height="315"
+   src="https://www.youtube.com/embed/K_U8KsA6OZc"
+   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+   allowfullscreen></iframe>
 </foreignObject>
