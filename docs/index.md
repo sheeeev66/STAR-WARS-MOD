@@ -1,7 +1,3 @@
 Hey Welcome to the official site of the star wars mod!
 
 ## Snapshot 1
-<div align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/K_U8KsA6OZc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</div>
