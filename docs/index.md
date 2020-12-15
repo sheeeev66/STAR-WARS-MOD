@@ -1,6 +1,4 @@
 Hey Welcome to the official site of the star wars mod!
 
 ## Snapshot 1
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=K_U8KsA6OZc
-" target="_blank"><img src="http://img.youtube.com/vi/K_U8KsA6OZc/0.jpg" 
-alt="Watch video on youtube" width="560" height="315" border="10" /></a>
+[![Watch snapshot 1 video on youtube](http://img.youtube.com/vi/K_U8KsA6OZc/0.jpg)](http://www.youtube.com/watch?v=K_U8KsA6OZc)
