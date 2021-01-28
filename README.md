@@ -5,4 +5,4 @@
 Ethereum: 0x0319B11c481a405beF746A338a896284703BbD7E \
 
 or scan this QR \
-![test image](Star Wars Mod Ethereum Adress.png)
+![test image](https://raw.githubusercontent.com/sheeeev66/STAR-WARS-MOD/master/Star%20Wars%20Mod%20Ethereum%20Adress.png)
