@@ -1,6 +1,6 @@
 # Hey Welcome to the official site of the star wars mod!	
 
-this website contains adds in order to fund the project. 
+this website contains adds in order to fund the project. we may remove them in the future tho.
 
 **Download the Mod [here](https://sheeeev664.webnode.com/mods/)**	
 
