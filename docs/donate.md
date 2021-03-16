@@ -1,3 +1,9 @@
+---
+title: Donate
+layout: template
+filename: donate.md
+--- 
+
 # Donate to the project:
 
 ### Donate to the project with Cryptocurrency! 
