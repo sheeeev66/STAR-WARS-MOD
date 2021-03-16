@@ -1,6 +1,6 @@
 # Donate to the project:
 
-[home page](/)
+[home page](/STAR-WARS-MOD)
 
 ### Donate to the project with Cryptocurrency! 
 Ethereum: 0x0319B11c481a405beF746A338a896284703BbD7E 
