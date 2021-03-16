@@ -11,7 +11,7 @@ this website contains adds in order to fund the project. we may remove them in t
 
 ## Snapshot 1	
 *Watch the video on youtube:*	
-[![Watch snapshot 1 video on youtube](https://img.youtube.com/vi/K_U8KsA6OZc/maxresdefault.jpg)](http://www.youtube.com/watch?v=K_U8KsA6OZc)	
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K_U8KsA6OZc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### This snapshot adds:	
 1. Mandalorian armor	
