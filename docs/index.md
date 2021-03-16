@@ -2,7 +2,7 @@
 
 this website contains adds in order to fund the project. we may remove them in the future tho.
 
-
+[Donate to the project](/donate/)
 
 **Download the Mod [here](https://sheeeev664.webnode.com/mods/)**	
 
