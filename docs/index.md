@@ -1,8 +1,6 @@
----
-title: Home Page
-layout: template
-filename: index.md
---- 
+layout: page
+title: "Star Wars Mod"
+permalink: /STAR-WARS-MOD/
 
 # Hey Welcome to the official site of the star wars mod!	
 
