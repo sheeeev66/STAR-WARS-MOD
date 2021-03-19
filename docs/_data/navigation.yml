@@ -1,12 +1,16 @@
 - title: Home
-  url: /
+  url: /STAR-WARS-MOD
 
-- title: Group of Things
-  url: /group/
-  sublinks:
-    - title: Donate
-      url: /donate
-    - title: Sub-item 2
-      url: /group/si2
-    - title: Sub-item 3
-      url: /group/si3
+- title: Donate
+  url: /STARS-WARS-MOD
+
+
+# - title: Group of Things
+#  url: /STAR-WARS/
+#  sublinks:
+#    - title: Donate
+#      url: /donate
+#    - title: Sub-item 2
+#      url: /group/si2
+#    - title: Sub-item 3
+#      url: /group/si3
