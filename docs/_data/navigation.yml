@@ -1,3 +1,5 @@
+{{ site.data.navigation}}
+
 - title: Home
   url: /STAR-WARS-MOD
 
