@@ -21,6 +21,7 @@ public class LightsaberTest extends Item {
         super(settings);
     }
 
+    // set lightsaber NBT tag to on. if false so it means its on
     public static boolean isOn(ItemStack stack) {
         CompoundTag tag = stack.getOrCreateTag();
         return tag.getBoolean("lightsaber_on");
@@ -31,6 +32,7 @@ public class LightsaberTest extends Item {
         tag.putBoolean("lightsaber_on", isOn);
     }
 
+    /*
     public static float getBladeTimer(ItemStack stack) {
         CompoundTag tag = stack.getOrCreateTag();
         return tag.getFloat("blade_timer");
@@ -44,24 +46,27 @@ public class LightsaberTest extends Item {
     public static float bladeTimer(ItemStack stack) {
         return getBladeTimer(stack);
     }
-    
+    */
+
     @Environment(EnvType.CLIENT)
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         boolean lightsaberOn = isOn(stack);
 
-        // toggle
-        System.out.println(lightsaberOn);
-        setOn(stack, !lightsaberOn);
-         System.out.println(lightsaberOn);
-
         // play sound on/off
-        player.playSound(lightsaberOn ? SoundRegistry.LIGHTSABER_ON : SoundRegistry.LIGHTSABER_OFF, 1.0f, 1.0f);
+        player.playSound(lightsaberOn ? SoundRegistry.LIGHTSABER_OFF : SoundRegistry.LIGHTSABER_ON, 1.0f, 1.0f);
+
+        // toggle
+        if
+        setOn(stack, !lightsaberOn);
+
 
         // use boolean operators
         if (world.isClient && lightsaberOn) {
             MinecraftClient client = MinecraftClient.getInstance();
             client.getSoundManager().play(new LightSaberHum(player, SoundCategory.AMBIENT));
+        } else {
+            MinecraftClient client = MinecraftClient.getInstance();
             client.getMusicTracker().stop();
         }
 

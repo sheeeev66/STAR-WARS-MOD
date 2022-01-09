@@ -14,6 +14,8 @@ public class ModelPredicatesRegistry {
 
     public static void initialize() {
         // lightsaber
+
+        /*
         FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_TEST, new Identifier(MOD_ID, "lightsaber_on"), new ModelPredicateProvider() {
 
 			@Override
@@ -21,13 +23,13 @@ public class ModelPredicatesRegistry {
 				return LightsaberTest.isOn(stack) ? 1.0F : 0.0F;
 			}
             
-        });
+        }); */
 
         FabricModelPredicateProviderRegistry.register(ItemRegistry.LIGHTSABER_TEST, new Identifier(MOD_ID, "lightsaber_animation_on"), new ModelPredicateProvider() {
             @Override
             public float call(ItemStack stack, ClientWorld world, LivingEntity entity) {
                 float turnOn = 20.0F;
-                return turnOn <= 20.0F ? turnOn >= 2 ? 2 : (turnOn - 1.0F) / 20.0F : (turnOn - 1.0F) / 20.0F;
+                return turnOn <= 20.0F ? turnOn >= 2 ? 2 : (turnOn - 1.0F) / 20.0F /* if first bool false->*/ : (turnOn - 1.0F) / 20.0F;
             }
         });
 

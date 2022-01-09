@@ -7,28 +7,24 @@
     "overrides": [
         {
             "predicate": {
-                "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation_on": 0.25
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_1"
         },
         {
             "predicate": {
-                "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation_on": 0.50
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_2"
         },
         {
             "predicate": {
-                "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation_on": 0.75
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_3"
         },
         {
             "predicate": {
-                "starwarsmaterials:lightsaber_on": 1,
                 "starwarsmaterials:lightsaber_animation_on": 1.0
             },
             "model": "starwarsmaterials:item/lightsaber_models/lightsaber_4"
